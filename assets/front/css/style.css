@@ -962,10 +962,11 @@ section {
 }
 .services .icon-box {
   text-align: center;
-  border: 1px solid #686567;
+  border: 1px solid #aca7aa;
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
-  border-radius: 2%;
+  background: white;
+  border-radius: 3%;
 }
 
 .services .icon-box .icon {
@@ -1017,7 +1018,7 @@ section {
 }
 
 .services .icon-box:hover {
-  background: -webkit-linear-gradient(0deg, #686567 0%, #910303 100%);
+  background: -webkit-linear-gradient(0deg, #aa0372 0%, #df0505 100%);
 }
 
 .services .icon-box:hover .icon {
