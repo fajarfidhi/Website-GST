@@ -61,7 +61,7 @@
 
 			<nav class="nav-menu d-none d-lg-block">
 				<ul>
-					<li class="active"><a href="<?= base_url(); ?>">Home</a></li>
+					<li class="active"><a href="#header">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#product">Product</a></li>
 					<li><a href="#portfolio">Portfolio</a></li>
@@ -82,7 +82,7 @@
 		<div class="container">
 			<h1>Welcome to PT. Graha Solusi Teknologi</h1>
 			<h2>We are team of talanted designers making websites with Bootstrap</h2>
-			<a href="#about" class=" modif2 btn-get-started scrollto">Get Started</a>
+			<a href="#about" class=" btn-get-started scrollto">Get Started</a>
 		</div>
 	</section><!-- End Hero -->
 
@@ -95,7 +95,7 @@
 				<div class="row">
 					<div class="col-lg-4 d-flex align-items-stretch">
 						<div class="content">
-							<h3>Why Choose Medilab?</h3>
+							<h3>Why Choose PT. GST?</h3>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
 								Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
@@ -194,7 +194,7 @@
 						</div>
 					</div>
 
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4 ">
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
 						<div class="icon-box">
 							<div class="icon"><i class="icofont-drug"></i></div>
 							<h4><a href="">Recorder</a></h4>
@@ -202,7 +202,7 @@
 						</div>
 					</div>
 
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4 ">
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
 						<div class="icon-box">
 							<div class="icon">
 								<i class="img-icon-ai"></i>
@@ -384,8 +384,8 @@
 						<div class="member d-flex align-items-start">
 							<div class="pic"><img src="<?= base_url(); ?>assets/front/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
 							<div class="member-info">
-								<h4>Walter White</h4>
-								<span>Chief Medical Officer</span>
+								<h4>Romano Adi Candra</h4>
+								<span>Bran Manager</span>
 								<p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
 								<div class="social">
 									<a href=""><i class="ri-twitter-fill"></i></a>
@@ -401,8 +401,8 @@
 						<div class="member d-flex align-items-start">
 							<div class="pic"><img src="<?= base_url(); ?>assets/front/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
 							<div class="member-info">
-								<h4>Sarah Jhonson</h4>
-								<span>Anesthesiologist</span>
+								<h4>Agnita</h4>
+								<span>Sales Supervisor</span>
 								<p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
 								<div class="social">
 									<a href=""><i class="ri-twitter-fill"></i></a>
@@ -418,8 +418,8 @@
 						<div class="member d-flex align-items-start">
 							<div class="pic"><img src="<?= base_url(); ?>assets/front/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
 							<div class="member-info">
-								<h4>William Anderson</h4>
-								<span>Cardiology</span>
+								<h4>Fajar Fidhi</h4>
+								<span>Technical Support</span>
 								<p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
 								<div class="social">
 									<a href=""><i class="ri-twitter-fill"></i></a>
@@ -435,8 +435,8 @@
 						<div class="member d-flex align-items-start">
 							<div class="pic"><img src="<?= base_url(); ?>assets/front/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
 							<div class="member-info">
-								<h4>Amanda Jepson</h4>
-								<span>Neurosurgeon</span>
+								<h4>Apilia</h4>
+								<span>Accounting</span>
 								<p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
 								<div class="social">
 									<a href=""><i class="ri-twitter-fill"></i></a>
@@ -502,13 +502,13 @@
 							<div class="address">
 								<i class="icofont-google-map"></i>
 								<h4>Location:</h4>
-								<p>A108 Adam Street, New York, NY 535022</p>
+								<p>Griya Kencana Asri G-11, Surabaya</p>
 							</div>
 
 							<div class="email">
 								<i class="icofont-envelope"></i>
 								<h4>Email:</h4>
-								<p>info@example.com</p>
+								<p>info@grahasolusi.co.is</p>
 							</div>
 
 							<div class="phone">
@@ -567,13 +567,13 @@
 				<div class="row">
 
 					<div class="col-lg-3 col-md-6 footer-contact">
-						<h3>CCTV Dahua</h3>
+						<h3>PT. GST</h3>
 						<p>
 							Griya Kencana Asri G-11 <br>
 							Surabaya, 60296<br>
 							Indonesia <br><br>
 							<strong>Phone:</strong> (031) 8722777<br>
-							<strong>Email:</strong> info@dahuacctv.com<br>
+							<strong>Email:</strong> info@grahasolusi.co.id<br>
 						</p>
 					</div>
 
@@ -616,7 +616,7 @@
 
 			<div class="mr-md-auto text-center text-md-left">
 				<div class="copyright">
-					&copy; Copyright <strong><span>Dahua CCTV</span></strong>. All Rights Reserved
+					&copy; Copyright <strong><span>PT. Graha Solusi Teknologi</span></strong>. All Rights Reserved
 				</div>
 				<div class="credits">
 					<!-- All the links in the footer should remain intact. -->

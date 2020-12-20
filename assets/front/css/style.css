@@ -526,14 +526,22 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 30px;
   border-radius: 50px;
   transition: 0.5s;
-  color: #fff;
-  background:#424242;
+  color: #424242;
+  font-weight: bolder;
+  background: white;
 }
 
 #hero .btn-get-started:hover {
+  /*
   background: -moz-linear-gradient(0deg,#424242 0%, #910303 100%);
   background: -webkit-linear-gradient(0deg,#424242 0%, #910303 100%);
   background: -ms-linear-gradient(0deg,#424242 0%, #910303 100%);
+  */
+  color: white;
+  background: #f50206;
+  border-top-color: 5px #424242;
+  box-shadow: 0 1px 0.5em 0em rgb(83, 83, 83);
+  
 }
 
 @media (min-width: 1024px) {
@@ -684,7 +692,7 @@ section {
 --------------------------------------------------------------*/
 .why-us .content {
   padding: 30px;
-  background-image: url(../img/desain/backgroung4.png);
+  background-image: url(../img/desain/Group\ 1.png);
   border-radius: 4px;
   color: #fff;
 }
@@ -713,7 +721,7 @@ section {
 }
 
 .why-us .content .more-btn:hover {
-  color: #1977cc;
+  color: #c20606;
   background: #fff;
 }
 
@@ -1018,7 +1026,7 @@ section {
 }
 
 .services .icon-box:hover {
-  background: -webkit-linear-gradient(0deg, #aa0372 0%, #df0505 100%);
+  background: -webkit-linear-gradient(0deg, #e91d1d 0%, #960505 100%);
 }
 
 .services .icon-box:hover .icon {
@@ -1491,7 +1499,7 @@ section {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
-  color: rgb(238, 66, 3);
+  color: rgb(153, 12, 2);
 }
 
 .doctors .member span {
@@ -1533,17 +1541,23 @@ section {
   border-radius: 50px;
   width: 32px;
   height: 32px;
-  background: #d5a0a0;
+  background: white;
+  border: 1px solid rgb(153, 12, 2);
 }
 
 .doctors .member .social a i {
-  color: #fff;
+  color: rgb(153, 12, 2);
   font-size: 16px;
   margin: 0 2px;
 }
 
 .doctors .member .social a:hover {
-  background: rgb(255, 40, 2);
+  background:rgb(153, 12, 2);
+  border: 1px solid rgb(153, 12, 2);
+}
+
+.doctors .member .social a i:hover{
+  color: white;
 }
 
 .doctors .member .social a + a {
@@ -1750,16 +1764,17 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color:rgb(238, 66, 3);
+  color: rgb(153, 12, 2);
   float: left;
   width: 44px;
   height: 44px;
-  background: #fad6d6;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
+  border: 1px solid  rgb(153, 12, 2);
 }
 
 .contact .info h4 {
@@ -1767,22 +1782,22 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #642c2c;
+  color: #413d3d;
 }
 
 .form-control{
-  border-color: rgb(241, 162, 148);
+  border-color: rgba(105, 69, 63, 0.308);
 }
 
 .form-control:focus{
-    border-color: rgb(255, 40, 2);
+    border-color:  rgb(182, 15, 3);
 }
 
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: rgb(238, 66, 3);
+  color: rgb(153, 12, 2);
 }
 
 .contact .info .email, .contact .info .phone {
@@ -1790,7 +1805,7 @@ section {
 }
 
 .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-  background: rgb(255, 40, 2);
+  background:  rgb(153, 12, 2);
   color: #fff;
 }
 
@@ -1868,16 +1883,19 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: rgb(238, 66, 3) ;
-  border: 0;
+  background:white ;
+  border: 1px solid  rgb(153, 12, 2);
   padding: 10px 35px;
-  color: #fff;
+  color:  rgb(153, 12, 2);
+  font-size: 14px;
   transition: 0.4s;
   border-radius: 50px;
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: rgb(255, 40, 2);
+  background:  rgb(153, 12, 2);
+  font-size: 14px;
+  color: white;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1956,7 +1974,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: rgb(238, 66, 3);
+  color:  rgb(153, 12, 2);
   font-size: 18px;
   line-height: 1;
 }
@@ -1980,7 +1998,7 @@ section {
 
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
-  color: rgb(255, 40, 2);
+  color: rgb(153, 12, 2);
 }
 
 #footer .footer-newsletter {
@@ -2002,7 +2020,7 @@ section {
   position: relative;
   border-radius: 50px;
   text-align: left;
-  border: 1px solid rgb(255, 40, 2);
+  border: 1px solid rgb(153, 12, 2);
 }
 
 input.news::after{
@@ -2013,7 +2031,7 @@ input.news::after{
 input.news:focus{
   outline-color:white;
   background: white;
-  color: #ec3a04;
+  color: #444444;
 }
 
 
@@ -2030,16 +2048,20 @@ input.news:focus{
   bottom: 0;
   border: 0;
   background: none;
-  font-size: 16px;
+  font-size: 15px;
   padding: 0 20px;
-  background: rgb(238, 66, 3);
+  background:  rgb(153, 12, 2);
   color: #fff;
   transition: 0.3s;
   border-radius: 50px;
+  border: 1px solid  rgb(153, 12, 2);
 }
 
 #footer .footer-newsletter form input[type="submit"]:hover {
-  background: rgb(255, 40, 2);
+  background:rgb(216, 5, 5);
+  color:  white;
+  font-size: 15px;
+
 }
 
 #footer .credits {
@@ -2051,7 +2073,7 @@ input.news:focus{
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: rgb(238, 66, 3);
+  background: rgb(153, 12, 2);
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -2061,12 +2083,14 @@ input.news:focus{
   width: 36px;
   height: 36px;
   transition: 0.3s;
+  border: 1px solid white;
 }
 
 #footer .social-links a:hover {
-  background: rgb(255, 40, 2);
-  color: #fff;
+  background: white;
+  color:  rgb(153, 12, 2);
   text-decoration: none;
+  border: 1px solid  rgb(153, 12, 2);
 }
 
 /* form modal login */
