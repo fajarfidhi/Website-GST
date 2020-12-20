@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-	<title>GST</title>
+	<title>PT. GRAHA SOLUSI TEKNOLOGI</title>
 	<meta content="" name="descriptison">
 	<meta content="" name="keywords">
 
@@ -29,6 +29,9 @@
 	<!-- Template Main CSS File -->
 	<link href="<?= base_url('assets/front/'); ?>css/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?= base_url('assets/front/'); ?>css/style1.css">
+
+	<!-- Slick Slide Animation Client-->
+	<link rel="stylesheet" href="<?= base_url('assets/front/'); ?>css/corousel.css">
 
 </head>
 
@@ -454,26 +457,25 @@
 		</section><!-- End Doctors Section -->
 
 		<!-- ======== Client ======== -->
-		<section id="client">
+		<section id="client" class="client">
 			<div class="container" data-aos="zoom-in">
 				<div class="section-title">
 					<h2>Clients</h2>
 					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
 				</div>
 
-				<div class="row justify-content-center">
-					<div class="col-xl-10">
-						<div class="owl-carousel clients-carousel">
-							<h2></h2>
-							<img src="<?= base_url(''); ?>assets/front/img/clients/client-1.png" alt="">
-							<img src="<?= base_url(''); ?>assets/front/img/clients/client-2.png" alt="">
-							<img src="<?= base_url(''); ?>assets/front/img/clients/client-3.png" alt="">
-							<img src="<?= base_url(''); ?>assets/front/img/clients/client-4.png" alt="">
-							<img src="<?= base_url(''); ?>assets/front/img/clients/client-5.png" alt="">
-							<img src="<?= base_url(''); ?>assets/front/img/clients/client-6.png" alt="">
-							<img src="<?= base_url(''); ?>assets/front/img/clients/client-7.png" alt="">
-							<img src="<?= base_url(''); ?>assets/front/img/clients/client-8.png" alt="">
-						</div>
+				<div class="row">
+					<div class="container">
+						<section class="customer-logos slider">
+							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-1.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-2.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-3.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-4.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-5.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-6.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-7.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-8.png"></div>
+						</section>
 					</div>
 				</div>
 			</div>
@@ -685,6 +687,7 @@
 	<!-- Template Main JS File -->
 	<script src="<?= base_url('assets/front/'); ?>js/main.js"></script>
 	<script src="<?= base_url('assets/front/'); ?>js/owl.carousel.js"></script>
+	<script src="<?= base_url('assets/front/'); ?>js/slick.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 		$(document).ready(function() {
 			$('#myModal').modal('hide');
@@ -692,7 +695,7 @@
 				slidesToShow: 6,
 				slidesToScroll: 1,
 				autoplay: true,
-				autoplaySpeed: 1500,
+				autoplaySpeed: 1000,
 				arrows: false,
 				dots: false,
 				pauseOnHover: false,

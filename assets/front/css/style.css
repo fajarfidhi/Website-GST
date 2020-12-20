@@ -631,7 +631,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: rgb(255, 40, 2);
+  background: rgb(189, 31, 3);
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -2162,6 +2162,10 @@ input.form-login:focus{
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
+#client{
+  background: rgb(252, 248, 248);
+}
+
 .clients .owl-item {
   display: flex;
   justify-content: center;
