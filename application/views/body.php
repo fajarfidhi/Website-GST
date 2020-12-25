@@ -29,7 +29,6 @@
 	<!-- Template Main CSS File -->
 	<link href="<?= base_url('assets/front/'); ?>css/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?= base_url('assets/front/'); ?>css/style1.css">
-
 	<!-- Slick Slide Animation Client-->
 	<link rel="stylesheet" href="<?= base_url('assets/front/'); ?>css/corousel.css">
 
@@ -58,7 +57,7 @@
 	<header id="header" class="fixed-top">
 		<div class="container d-flex align-items-center">
 
-			<h1 class="logo mr-auto"><a href="<?= base_url(); ?>">PT. GRAHA SOLUSI TEKNOLOGI</a></h1>
+			<h1 class="logo mr-auto"><a href="">PT. GRAHA SOLUSI TEKNOLOGI</a></h1>
 			<!-- Uncomment below if you prefer to use an image logo -->
 			<!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -84,7 +83,7 @@
 	<section id="hero" class="d-flex align-items-center">
 		<div class="container">
 			<h1>Welcome to PT. Graha Solusi Teknologi</h1>
-			<h2>We are team of talanted designers making websites with Bootstrap</h2>
+			<h2>We are team of PT. Graha Solusi Teknologi your solution project</h2>
 			<a href="#about" class=" btn-get-started scrollto">Get Started</a>
 		</div>
 	</section><!-- End Hero -->
@@ -100,8 +99,10 @@
 						<div class="content">
 							<h3>Why Choose PT. GST?</h3>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-								Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+								Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus
+								optio ad corporis.
 							</p>
 							<div class="text-center">
 								<a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
@@ -115,21 +116,24 @@
 									<div class="icon-box mt-4 mt-xl-0">
 										<i class="bx bx-receipt"></i>
 										<h4>Corporis voluptates sit</h4>
-										<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+										<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
+											aliquip</p>
 									</div>
 								</div>
 								<div class="col-xl-4 d-flex align-items-stretch">
 									<div class="icon-box mt-4 mt-xl-0">
 										<i class="bx bx-cube-alt"></i>
 										<h4>Ullamco laboris ladore pan</h4>
-										<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+										<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+											deserunt</p>
 									</div>
 								</div>
 								<div class="col-xl-4 d-flex align-items-stretch">
 									<div class="icon-box mt-4 mt-xl-0">
 										<i class="bx bx-images"></i>
 										<h4>Labore consequatur</h4>
-										<p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+										<p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis
+											facere</p>
 									</div>
 								</div>
 							</div>
@@ -146,29 +150,42 @@
 
 				<div class="row">
 					<div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
-						<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+						<a href="https://www.youtube.com/watch?v=Y-K3Kqf6GjA" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
 					</div>
 
 					<div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-						<h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-						<p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+						<h3>Solution for your needs</h3>
+						<p>As a leading security solution provider, Dahua offers end-to-end solutions for various
+							applications and vertical industries including traffic management, government facilities,
+							retail, and banking & finance and so on. Application solutions such as Face Recognition and
+							LPR feature not only cameras, recorders, and VMS, but also open interfaces for convenient
+							3rd party integration.</p>
 
 						<div class="icon-box">
 							<div class="icon"><i class="bx bx-fingerprint"></i></div>
-							<h4 class="title"><a href="">Lorem Ipsum</a></h4>
-							<p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+							<h4 class="title"><a href="">Perimeter Protection</a></h4>
+							<p class="description">Dahua perimeter protection solution is designed to provide a
+								high-efficiency, reliable, cost-effective and visual system powered by artificial
+								intelligence technologye</p>
 						</div>
 
 						<div class="icon-box">
 							<div class="icon"><i class="bx bx-gift"></i></div>
-							<h4 class="title"><a href="">Nemo Enim</a></h4>
-							<p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+							<h4 class="title"><a href="">Face Recognition</a></h4>
+							<p class="description">Dahua Face Recognition solutions offer high accuracy of detection
+								rate and recognition rate with its advanced AI technology ,and can provide such
+								functions as Face Detection, Face Comparison, Intelligent Search, Face Image Search,
+								Face Database Management, Mobile App Linkage, Information Display, Video Full Color
+								,etc.</p>
 						</div>
 
 						<div class="icon-box">
 							<div class="icon"><i class="bx bx-atom"></i></div>
-							<h4 class="title"><a href="">Dine Pad</a></h4>
-							<p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
+							<h4 class="title"><a href="">Epidemic Safety Protection Solution</a></h4>
+							<p class="description">With the massive scope of the COVID-19 outbreak globally, various
+								countries have announced new regulations to combat the spread of this pandemic, such as
+								maintaining distance in essential activities, limiting in the number of people inside,
+								monitoring of people’s body temperature, etc.</p>
 						</div>
 
 					</div>
@@ -182,78 +199,189 @@
 			<div class="container">
 
 				<div class="section-title">
-					<h2>Product</h2>
-					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+					<h2>Products</h2>
+					<p>Abiding by the philosophy of "Innovation for All", Dahua offers a wide portfolio of
+						security-related products, ranging from IPC, NVR, HDCVI cameras, HCVR, PTZ cameras, thermal
+						cameras, Access Control, Video Intercom, Alarms, Mobile & Traffic products, display & control,
+						VMS and so on. Dahua products are based on an open platform that features easy integration with
+						third party partners through a standard SDK</p>
 				</div>
 
 				<div class="row">
 					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
 						<div class="icon-box">
 							<div class="icon">
-								<i class="img-icon-camera"></i>
+								<img src="<?= base_url('assets/front/'); ?>img/product/camera-ip.png" alt="">
 							</div>
-							<h4><a href="">Camera</a></h4>
-							<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon"><i class="icofont-drug"></i></div>
-							<h4><a href="">Recorder</a></h4>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+							<h4><a href="">Network Camera</a></h4>
+							<p>As an innovation leader, Dahua Technology is committed to offering cutting-edge
+								technologies and products...</p>
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
 						<div class="icon-box">
 							<div class="icon">
-								<i class="img-icon-ai"></i>
+								<img src="<?= base_url('assets/front/'); ?>img/product/hdvci-camera.png" alt="">
 							</div>
-							<h4><a href="">AI Camera</a></h4>
-							<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+							<h4><a href="">HDCVI Camera</a></h4>
+							<p>As the inventor of HDCVI (High Definition Composite Video Interface) technology, Dahua
+								continuously invests in the tech... </p>
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
 						<div class="icon-box">
 							<div class="icon">
-								<i class="img-icon-ptz"></i>
+								<img src="<?= base_url('assets/front/'); ?>img/product/ptz-kameraa.png" alt="">
 							</div>
-							<h4><a href="">PTZ</a></h4>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+							<h4><a href="">PTZ Cameras</a></h4>
+							<p>Dahua offers both network and HDCVI PTZ cameras. PTZ cameras use pan, tilt, and zoom
+								functionality to provide both...</p>
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
 						<div class="icon-box">
-							<div class="icon"><i class="icofont-disabled"></i></div>
-							<h4><a href="">Transmision</a></h4>
-							<p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/thermal-kamera.png" alt="">
+							</div>
+							<h4><a href="">Thermal Cameras</a></h4>
+							<p>Thermal cameras, which do not require a light source, are excellent for providing
+								enhanced coverage in in diverse...</p>
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
 						<div class="icon-box">
-							<div class="icon"><i class="icofont-autism"></i></div>
-							<h4><a href="">Storage</a></h4>
-							<p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/network-recorder.png" alt="">
+							</div>
+							<h4><a href="">Network Recorders</a></h4>
+							<p>Dahua Ultra, Pro, and Lite Series network recorders are tailored to fit different
+								applications. Ultra Series recorders...
+							</p>
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
 						<div class="icon-box">
-							<div class="icon"><i class="icofont-aids"></i></div>
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/hdcvi-recorder.png" alt="">
+							</div>
+							<h4><a href="">HDCVI Recorders</a></h4>
+							<p>Dahua HDCVI (High Definition Composite Video Interface) Recorders include the Ultra, Pro,
+								and Lite Series to fit various...</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
+						<div class="icon-box">
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/ez-ipp.png" alt="">
+							</div>
+							<h4><a href="">EZ-IP</a></h4>
+							<p>EZ-IP is perfect for small to medium size applications like home/residential security,
+								small retail shops, and other typical...</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
+						<div class="icon-box">
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/video-intercom.png" alt="">
+							</div>
+							<h4><a href="">Video Intercoms</a></h4>
+							<p>Dahua’s Video Intercom product lineup eases communications between visitors, home owners,
+								and property management...</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
+						<div class="icon-box">
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/access32.png" alt="">
+							</div>
+							<h4><a href="">Access Control</a></h4>
+							<p>Dahua Access Control offers a wide range of products and various solutions designed for
+								preventing unauthorized...</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
+						<div class="icon-box">
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/Alarms1.png" alt="">
+							</div>
+							<h4><a href="">Alarm</a></h4>
+							<p>Alarms are an important component in keeping your house and premises safe. Dahua offers
+								both wireless and...</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
+						<div class="icon-box">
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/Mobile_Traffic.png" alt="">
+							</div>
+							<h4><a href="">Mobile & Traffic</a></h4>
+							<p>Daily commutes are a part of life. Dahua offers a wide-range of Intelligent
+								Transportation System (ITS)...</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
+						<div class="icon-box">
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/Transmission.png" alt="">
+							</div>
+							<h4><a href="">Transmission</a></h4>
+							<p>Dahua Technology is a world-leading advanced video surveillance solution provider with
+								rich experience in video...</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
+						<div class="icon-box">
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/Display_contorl2.png" alt="">
+							</div>
+							<h4><a href="">Display & Control</a></h4>
+							<p>Dahua provides a wide range of high quality display and control solutions for security
+								and commercial use....</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
+						<div class="icon-box">
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/IVS.png" alt="">
+							</div>
 							<h4><a href="">IVS</a></h4>
-							<p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+							<p>Dahua provides a wide range of high quality display and control solutions for security
+								and commercial use...</p>
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
 						<div class="icon-box">
-							<div class="icon"><i class="icofont-align-center"></i></div>
-							<h4><a href="">Mobile & Trafiic</a></h4>
-							<p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/Storage.png" alt="">
+							</div>
+							<h4><a href="">Storage</a></h4>
+							<p>Dahua provides a wide range of high quality display and control solutions for security
+								and commercial use...</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
+						<div class="icon-box">
+							<div class="icon">
+								<img src="<?= base_url('assets/front/'); ?>img/product/security-scrining.png" alt="">
+							</div>
+							<h4><a href="">Security Screening Server</a></h4>
+							<p>Dahua provides a wide range of high quality display and control solutions for security
+								and commercial use...</p>
 						</div>
 					</div>
 
@@ -267,16 +395,17 @@
 
 				<div class="section-title">
 					<h2>Portfolio</h2>
-					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+					<p>Short description of the portfolio</p>
 				</div>
 
 				<div class="row">
 					<div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
 						<ul id="portfolio-flters">
 							<li data-filter="*" class="filter-active">All</li>
-							<li data-filter=".filter-app">App</li>
-							<li data-filter=".filter-card">Card</li>
-							<li data-filter=".filter-web">Web</li>
+							<li data-filter=".filter-app">Camera</li>
+							<li data-filter=".filter-card">Access Control</li>
+							<li data-filter=".filter-web">Management</li>
+							<li data-filter=".filter-web">Video</li>
 						</ul>
 					</div>
 				</div>
@@ -285,12 +414,12 @@
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
 						<div class="portfolio-wrap">
-							<img src="<?= base_url('') ?>assets/front/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
 								<h4>Card 1</h4>
 								<p>Card</p>
 								<div class="portfolio-links">
-									<a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
+									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
 									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
 								</div>
 							</div>
@@ -299,12 +428,12 @@
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
 						<div class="portfolio-wrap">
-							<img src="<?= base_url('') ?>assets/front/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
 								<h4>Card 3</h4>
 								<p>Card</p>
 								<div class="portfolio-links">
-									<a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
+									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
 									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
 								</div>
 							</div>
@@ -313,12 +442,12 @@
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
 						<div class="portfolio-wrap">
-							<img src="<?= base_url('') ?>assets/front/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
 								<h4>Web 3</h4>
 								<p>Web</p>
 								<div class="portfolio-links">
-									<a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
 									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
 								</div>
 							</div>
@@ -327,12 +456,12 @@
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
 						<div class="portfolio-wrap">
-							<img src="<?= base_url('') ?>assets/front/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
 								<h4>Card 1</h4>
 								<p>Card</p>
 								<div class="portfolio-links">
-									<a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
+									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
 									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
 								</div>
 							</div>
@@ -341,12 +470,12 @@
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
 						<div class="portfolio-wrap">
-							<img src="<?= base_url('') ?>assets/front/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
 								<h4>Card 3</h4>
 								<p>Card</p>
 								<div class="portfolio-links">
-									<a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
+									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
 									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
 								</div>
 							</div>
@@ -355,12 +484,12 @@
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
 						<div class="portfolio-wrap">
-							<img src="<?= base_url('') ?>assets/front/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
 								<h4>Web 3</h4>
 								<p>Web</p>
 								<div class="portfolio-links">
-									<a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
 									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
 								</div>
 							</div>
@@ -378,14 +507,14 @@
 
 				<div class="section-title">
 					<h2>Teams</h2>
-					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+					<p>Short description of the teams</p>
 				</div>
 
 				<div class="row">
 
 					<div class="col-lg-6">
 						<div class="member d-flex align-items-start">
-							<div class="pic"><img src="<?= base_url(); ?>assets/front/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+							<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
 							<div class="member-info">
 								<h4>Romano Adi Candra</h4>
 								<span>Bran Manager</span>
@@ -402,7 +531,7 @@
 
 					<div class="col-lg-6 mt-4 mt-lg-0">
 						<div class="member d-flex align-items-start">
-							<div class="pic"><img src="<?= base_url(); ?>assets/front/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+							<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
 							<div class="member-info">
 								<h4>Agnita</h4>
 								<span>Sales Supervisor</span>
@@ -419,7 +548,7 @@
 
 					<div class="col-lg-6 mt-4">
 						<div class="member d-flex align-items-start">
-							<div class="pic"><img src="<?= base_url(); ?>assets/front/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
+							<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
 							<div class="member-info">
 								<h4>Fajar Fidhi</h4>
 								<span>Technical Support</span>
@@ -436,7 +565,7 @@
 
 					<div class="col-lg-6 mt-4">
 						<div class="member d-flex align-items-start">
-							<div class="pic"><img src="<?= base_url(); ?>assets/front/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
+							<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
 							<div class="member-info">
 								<h4>Apilia</h4>
 								<span>Accounting</span>
@@ -457,24 +586,24 @@
 		</section><!-- End Doctors Section -->
 
 		<!-- ======== Client ======== -->
-		<section id="client" class="client">
+		<section id="client">
 			<div class="container" data-aos="zoom-in">
 				<div class="section-title">
 					<h2>Clients</h2>
-					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+					<p>Description Our Client</p>
 				</div>
 
 				<div class="row">
 					<div class="container">
 						<section class="customer-logos slider">
-							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-1.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-2.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-3.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-4.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-5.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-6.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-7.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/') ?>img/clients/client-8.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-1.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-2.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-3.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-4.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-5.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-6.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-7.png"></div>
+							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-8.png"></div>
 						</section>
 					</div>
 				</div>
@@ -486,7 +615,7 @@
 
 				<div class="section-title">
 					<h2>Contact</h2>
-					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+					<p>Short description of the contacts</p>
 				</div>
 			</div>
 
@@ -525,7 +654,7 @@
 
 					<div class="col-lg-8 mt-5 mt-lg-0">
 
-						<form action="forms/contact.php" method="post" role="form" class="php-email-form">
+						<form action="<?= base_url('assets/front/'); ?>forms/contact.php" method="post" role="form" class="php-email-form">
 							<div class="form-row">
 								<div class="col-md-6 form-group">
 									<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -568,8 +697,8 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col-lg-3 col-md-6 footer-contact">
-						<h3>PT. GST</h3>
+					<div class="col-lg-5 col-md-6 footer-contact">
+						<h3>PT. GRAHA SOLUSI TEKNOLOGI</h3>
 						<p>
 							Griya Kencana Asri G-11 <br>
 							Surabaya, 60296<br>
@@ -579,7 +708,7 @@
 						</p>
 					</div>
 
-					<div class="col-lg-2 col-md-6 footer-links">
+					<div class="col-lg-3 col-md-6 footer-links">
 						<h4>Useful Links</h4>
 						<ul>
 							<li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -590,6 +719,7 @@
 						</ul>
 					</div>
 
+					<!--
 					<div class="col-lg-3 col-md-6 footer-links">
 						<h4>Our Services</h4>
 						<ul>
@@ -600,10 +730,11 @@
 							<li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
 						</ul>
 					</div>
+					-->
 
 					<div class="col-lg-4 col-md-6 footer-newsletter">
 						<h4>Join Our Newsletter</h4>
-						<p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+						<p>Get updated information about the news that dahua</p>
 						<form action="" method="post">
 							<input class="news" type="email" name="email">
 							<input type="submit" value="Subscribe">
@@ -656,7 +787,7 @@
 							<input type="text" class="form-control form-login " id="txt_name" name="txt_name" placeholder="Password...">
 						</div>
 						<div class="form-group">
-							<a href="" class="btn btn-info btn-lg btn-block btn-login">Login</a>
+							<a href="admin/index.html" class="btn btn-info btn-lg btn-block btn-login">Login</a>
 						</div>
 						<hr>
 						<h6 class="forgot"><a href="#">Forgot Password?</a></h6>
@@ -687,7 +818,12 @@
 	<!-- Template Main JS File -->
 	<script src="<?= base_url('assets/front/'); ?>js/main.js"></script>
 	<script src="<?= base_url('assets/front/'); ?>js/owl.carousel.js"></script>
+
+	<!-- animate slide client-->
 	<script src="<?= base_url('assets/front/'); ?>js/slick.js" type="text/javascript" charset="utf-8"></script>
+
+	<!--Animate Menu-->
+	<script src="<?= base_url('assets/front/'); ?>js/main-menu.js" type="text/javascrip"></script>
 	<script>
 		$(document).ready(function() {
 			$('#myModal').modal('hide');

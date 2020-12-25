@@ -215,13 +215,13 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
   }
   #header .logo {
-    font-size: 28px;
+    font-size: 20px;
   }
 }
 
-@media (max-width:700px){
+@media(max-width: 700px){
   #header .logo{
-    font-size: 20px;
+    font-size: 21px;
   }
 }
 
@@ -236,6 +236,17 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
+.nav-menu{
+  position: relative;
+  .line{
+    height: 12px;
+    position: absolute;
+    bottom:0;
+    margin:10px 0 0 0;
+    background: #0563bb;
+  }
+}
+
 .nav-menu ul {
   margin: 0;
   padding: 0;
@@ -352,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Get Startet Button */
 .appointment-btn {
   margin-left: 25px;
-  background: #424242;
+  background: #e60303;
   color: #fff;
   border-radius: 50px;
   padding: 8px 25px;
@@ -363,16 +374,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .appointment-btn:hover {
-  /*background: -moz-linear-gradient(0deg,#424242 0%, #910303 100%);
-  background: -webkit-linear-gradient(0deg,#424242 0%, #e20404 100%);
-  background: -ms-linear-gradient(0deg,#424242 0%, #910303 100%);
-  */ 
   background-color: white;
-  color: black;
+  color: rgb(131, 8, 8);
   border-top-color: 5px #424242;
-  box-shadow: 0 1px 0.5em 0em rgb(8, 8, 8);
+  box-shadow: 0 1px 0.5em 0em rgb(243, 5, 5);
   transform: translateY(-0.25em);
-
 }
 
 .appointment-btn:focus{
@@ -394,7 +400,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav-toggle {
   position: fixed;
   right: 15px;
-  top: 20px;
+  top: 19px;
   z-index: 9998;
   border: 0;
   background: none;
@@ -631,7 +637,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: rgb(189, 31, 3);
+  background: rgb(255, 40, 2);
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -833,7 +839,7 @@ section {
 }
 
 .about .video-box {
-  background: url("../img/about.jpg") center center no-repeat;
+  background: url("../img/Dahua-CCTV-4.jpg") center center no-repeat;
   background-size: cover;
   min-height: 500px;
 }
@@ -984,29 +990,24 @@ section {
 .services .icon-box {
   text-align: center;
   border: 1px solid #aca7aa;
-  padding: 80px 20px;
+  padding: 20px 20px;
   transition: all ease-in-out 0.3s;
   background: white;
-  border-radius: 3%;
+  border-radius: 3%; 
 }
 
 .services .icon-box .icon {
   margin: 0 auto;
   width: 64px;
   height: 64px;
-  background: rgb(255, 40, 2);
   border-radius: 5px;
   transition: all .3s ease-out 0s;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 40px;
   transform-style: preserve-3d;
-}
-
-.services .icon-box .icon i {
-  color: #fff;
-  font-size: 28px;
 }
 
 .services .icon-box .icon::before {
@@ -1016,7 +1017,6 @@ section {
   top: -8px;
   height: 100%;
   width: 100%;
-  background: #f88989;
   border-radius: 5px;
   transition: all .3s ease-out 0s;
   transform: translateZ(-1px);
@@ -1025,7 +1025,7 @@ section {
 .services .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .services .icon-box h4 a {
@@ -1034,74 +1034,16 @@ section {
 
 .services .icon-box p {
   line-height: 24px;
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 0;
 }
 
 .services .icon-box:hover {
-  background: -webkit-linear-gradient(0deg, #e91d1d 0%, #960505 100%);
+  background: white;
+  box-shadow: 0 1px 0.5em 0em rgb(8, 8, 8);
 }
 
-.services .icon-box:hover .icon {
-  background: #fff;
-}
 
-.services .icon-box:hover .icon i {
-  color: rgb(255, 40, 2);
-}
-
-.services .icon-box:hover .icon::before {
-  background: #f5aeae;
-}
-
-.services .icon-box:hover h4 a, .services .icon-box:hover p {
-  color: #fff;    
-}
-
-.services .icon-box .icon .img-icon-camera{
-  width: 64px;
-  height: 40px;
-  margin: 2px;
-  background: url(../img/logo/Camera-white-1.png);
-} 
-
-.services .icon-box:hover .icon .img-icon-camera{
-  width: 64px;
-  height: 40px;
-  margin: 2px;
-  background: url(../img/logo/Camera-1.png);
-  color: #f73c03;
-}
-
-.services .icon-box .icon .img-icon-ptz{
-  width: 64px;
-  height: 40px;
-  margin: 2px;
-  background: url(../img/logo/PTZ-1.png);
-} 
-
-.services .icon-box:hover .icon .img-icon-ptz{
-  width: 64px;
-  height: 40px;
-  margin: 2px;
-  background: url(../img/logo/PTZ.png);
-  color: #f73c03;
-}
-
-.services .icon-box .icon .img-icon-ai{
-  width: 64px;
-  height: 40px;
-  margin: 2px;
-  background: url(../img/logo/AI-Camera-1-1.png);
-} 
-
-.services .icon-box:hover .icon .img-icon-ai{
-  width: 64px;
-  height: 40px;
-  margin: 2px;
-  background: url(../img/logo/AI-Camera-1.png);
-  color: #f73c03;
-}
 
 /*--------------------------------------------------------------
 # Portfolio
@@ -1963,7 +1905,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: #777777;
 }
 
@@ -2162,10 +2104,6 @@ input.form-login:focus{
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
-#client{
-  background: rgb(252, 248, 248);
-}
-
 .clients .owl-item {
   display: flex;
   justify-content: center;
