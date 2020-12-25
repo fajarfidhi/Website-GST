@@ -1434,7 +1434,7 @@ section {
 
 .doctors .member .pic {
   overflow: hidden;
-  width: 180px;
+  width: 150px;
   border-radius: 50%;
 }
 
@@ -1478,7 +1478,7 @@ section {
 
 .doctors .member p {
   margin: 10px 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .doctors .member .social {

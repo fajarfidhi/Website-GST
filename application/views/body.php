@@ -208,185 +208,18 @@
 				</div>
 
 				<div class="row">
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/camera-ip.png" alt="">
+					<?php foreach ($product as $prod) { ?>
+						<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
+							<div class="icon-box">
+								<div class="icon">
+									<img src="<?= base_url('assets/front/'); ?>img/product/<?php echo $prod->picture; ?>" alt="">
+								</div>
+								<h4><a href=""><?php echo $prod->name; ?></a></h4>
+								<p><?php echo substr($prod->description, 0, 120); ?> ...</p>
 							</div>
-							<h4><a href="">Network Camera</a></h4>
-							<p>As an innovation leader, Dahua Technology is committed to offering cutting-edge
-								technologies and products...</p>
 						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/hdvci-camera.png" alt="">
-							</div>
-							<h4><a href="">HDCVI Camera</a></h4>
-							<p>As the inventor of HDCVI (High Definition Composite Video Interface) technology, Dahua
-								continuously invests in the tech... </p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/ptz-kameraa.png" alt="">
-							</div>
-							<h4><a href="">PTZ Cameras</a></h4>
-							<p>Dahua offers both network and HDCVI PTZ cameras. PTZ cameras use pan, tilt, and zoom
-								functionality to provide both...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/thermal-kamera.png" alt="">
-							</div>
-							<h4><a href="">Thermal Cameras</a></h4>
-							<p>Thermal cameras, which do not require a light source, are excellent for providing
-								enhanced coverage in in diverse...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/network-recorder.png" alt="">
-							</div>
-							<h4><a href="">Network Recorders</a></h4>
-							<p>Dahua Ultra, Pro, and Lite Series network recorders are tailored to fit different
-								applications. Ultra Series recorders...
-							</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/hdcvi-recorder.png" alt="">
-							</div>
-							<h4><a href="">HDCVI Recorders</a></h4>
-							<p>Dahua HDCVI (High Definition Composite Video Interface) Recorders include the Ultra, Pro,
-								and Lite Series to fit various...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/ez-ipp.png" alt="">
-							</div>
-							<h4><a href="">EZ-IP</a></h4>
-							<p>EZ-IP is perfect for small to medium size applications like home/residential security,
-								small retail shops, and other typical...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/video-intercom.png" alt="">
-							</div>
-							<h4><a href="">Video Intercoms</a></h4>
-							<p>Dahua’s Video Intercom product lineup eases communications between visitors, home owners,
-								and property management...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/access32.png" alt="">
-							</div>
-							<h4><a href="">Access Control</a></h4>
-							<p>Dahua Access Control offers a wide range of products and various solutions designed for
-								preventing unauthorized...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/Alarms1.png" alt="">
-							</div>
-							<h4><a href="">Alarm</a></h4>
-							<p>Alarms are an important component in keeping your house and premises safe. Dahua offers
-								both wireless and...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/Mobile_Traffic.png" alt="">
-							</div>
-							<h4><a href="">Mobile & Traffic</a></h4>
-							<p>Daily commutes are a part of life. Dahua offers a wide-range of Intelligent
-								Transportation System (ITS)...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/Transmission.png" alt="">
-							</div>
-							<h4><a href="">Transmission</a></h4>
-							<p>Dahua Technology is a world-leading advanced video surveillance solution provider with
-								rich experience in video...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/Display_contorl2.png" alt="">
-							</div>
-							<h4><a href="">Display & Control</a></h4>
-							<p>Dahua provides a wide range of high quality display and control solutions for security
-								and commercial use....</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/IVS.png" alt="">
-							</div>
-							<h4><a href="">IVS</a></h4>
-							<p>Dahua provides a wide range of high quality display and control solutions for security
-								and commercial use...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/Storage.png" alt="">
-							</div>
-							<h4><a href="">Storage</a></h4>
-							<p>Dahua provides a wide range of high quality display and control solutions for security
-								and commercial use...</p>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-						<div class="icon-box">
-							<div class="icon">
-								<img src="<?= base_url('assets/front/'); ?>img/product/security-scrining.png" alt="">
-							</div>
-							<h4><a href="">Security Screening Server</a></h4>
-							<p>Dahua provides a wide range of high quality display and control solutions for security
-								and commercial use...</p>
-						</div>
-					</div>
-
+					<?php } ?>
 				</div>
-
 			</div>
 		</section><!-- End Services Section -->
 
@@ -511,77 +344,26 @@
 				</div>
 
 				<div class="row">
-
-					<div class="col-lg-6">
-						<div class="member d-flex align-items-start">
-							<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
-							<div class="member-info">
-								<h4>Romano Adi Candra</h4>
-								<span>Bran Manager</span>
-								<p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-								<div class="social">
-									<a href=""><i class="ri-twitter-fill"></i></a>
-									<a href=""><i class="ri-facebook-fill"></i></a>
-									<a href=""><i class="ri-instagram-fill"></i></a>
-									<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+					<?php foreach ($teams as $tem) { ?>
+						<div class="col-lg-6 mt-4">
+							<div class="member d-flex align-items-start">
+								<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/teams/<?php echo $tem->picture; ?>" class="img-fluid" alt=""></div>
+								<div class="member-info">
+									<h4><?php echo $tem->name; ?></h4>
+									<span><?php echo $tem->position; ?></span>
+									<div class="social">
+										<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->telepone; ?>"><i class="icofont-phone"></i></a>
+										<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->email; ?>"><i class="icofont-ui-email"></i></a>
+										<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->whatsapp; ?>"><i class="icofont-whatsapp"></i></a>
+										<a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-facebook-fill"></i></a>
+										<a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-instagram-fill"></i></a>
+										<a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-linkedin-box-fill"></i></a>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-
-					<div class="col-lg-6 mt-4 mt-lg-0">
-						<div class="member d-flex align-items-start">
-							<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
-							<div class="member-info">
-								<h4>Agnita</h4>
-								<span>Sales Supervisor</span>
-								<p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-								<div class="social">
-									<a href=""><i class="ri-twitter-fill"></i></a>
-									<a href=""><i class="ri-facebook-fill"></i></a>
-									<a href=""><i class="ri-instagram-fill"></i></a>
-									<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-6 mt-4">
-						<div class="member d-flex align-items-start">
-							<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
-							<div class="member-info">
-								<h4>Fajar Fidhi</h4>
-								<span>Technical Support</span>
-								<p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-								<div class="social">
-									<a href=""><i class="ri-twitter-fill"></i></a>
-									<a href=""><i class="ri-facebook-fill"></i></a>
-									<a href=""><i class="ri-instagram-fill"></i></a>
-									<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-6 mt-4">
-						<div class="member d-flex align-items-start">
-							<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
-							<div class="member-info">
-								<h4>Apilia</h4>
-								<span>Accounting</span>
-								<p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-								<div class="social">
-									<a href=""><i class="ri-twitter-fill"></i></a>
-									<a href=""><i class="ri-facebook-fill"></i></a>
-									<a href=""><i class="ri-instagram-fill"></i></a>
-									<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-								</div>
-							</div>
-						</div>
-					</div>
-
+					<?php } ?>
 				</div>
-
 			</div>
 		</section><!-- End Doctors Section -->
 
@@ -596,14 +378,9 @@
 				<div class="row">
 					<div class="container">
 						<section class="customer-logos slider">
-							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-1.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-2.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-3.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-4.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-5.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-6.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-7.png"></div>
-							<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/client-8.png"></div>
+							<?php foreach ($clients as $cli) { ?>
+								<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/<?php echo $cli->picture; ?>"></div>
+							<?php } ?>
 						</section>
 					</div>
 				</div>
@@ -852,6 +629,10 @@
 		function login() {
 			$('#myModal').modal('show');
 		}
+
+		$(function() {
+			$('[data-toggle="popover"]').popover()
+		})
 	</script>
 </body>
 
