@@ -355,9 +355,10 @@
 										<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->telepone; ?>"><i class="icofont-phone"></i></a>
 										<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->email; ?>"><i class="icofont-ui-email"></i></a>
 										<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->whatsapp; ?>"><i class="icofont-whatsapp"></i></a>
-										<a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-facebook-fill"></i></a>
+										<!-- <a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-facebook-fill"></i></a>
 										<a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-instagram-fill"></i></a>
 										<a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-linkedin-box-fill"></i></a>
+										-->
 									</div>
 								</div>
 							</div>
