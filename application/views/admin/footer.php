@@ -62,6 +62,28 @@
 <!-- Page level custom scripts -->
 <script src="<?= base_url('assets/back/') ?>js/demo/datatables-demo.js"></script>
 
+<!-- Page level Sweetalert -->
+<script src="<?= base_url('assets/back/') ?>vendor/sweetalert/dist/sweetalert2.all.min.js"></script>
+<script src="<?= base_url('assets/back/') ?>vendor/sweetalert/dist/sweetalert2.min.js"></script>
+
+<script>
+  function logout() {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Log Out!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.reload('<?php echo base_url('Login_Admin/logout') ?>');
+      }
+    })
+  }
+</script>
+
 </body>
 
 </html>

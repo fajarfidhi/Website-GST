@@ -23,6 +23,6 @@ class Model_Admin_Login extends CI_Model
 
     public function takedata($email, $password)
     {
-        return $this->db->get_where('user', ['email' => $email, 'password' => $password])->row_array();
+        return $this->db->select('*')->get_where('user', ['email' => $email, 'password' => $password])->row();
     }
 }

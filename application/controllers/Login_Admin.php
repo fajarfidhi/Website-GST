@@ -8,10 +8,8 @@ class Login_Admin extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->database();
         $this->load->model('Model_Admin_Login');
-        $log = $this->session->userdata('status');
-        if ($log == "Login") {
+        if ($this->session->userdata('status') != true) {
             redirect('Administrator');
         } else {
         }
@@ -19,7 +17,8 @@ class Login_Admin extends CI_Controller
 
     public function index()
     {
-        $this->load->view('admin/login');
+        $data['title'] = "Login Admin GST";
+        $this->load->view('admin/login', $data);
     }
 
     public function cekdata()
@@ -46,17 +45,17 @@ class Login_Admin extends CI_Controller
                     $cekactive = $this->Model_Admin_Login->cek_active($email, $password);
                     if ($cekactive['actived'] == 1) {
                         $takedata = $this->Model_Admin_Login->takedata($email, $password);
-                        $showdata = [
+                        $showdata = array(
                             'iduser' => $takedata['iduser'],
                             'username' => $takedata['username'],
                             'email' => $takedata['email'],
                             'password' => $takedata['password'],
                             'name' => $takedata['name'],
                             'picture' => $takedata['picture'],
-                            'status' => "Login",
+                            'status' => true,
                             'actived' => $takedata['actived'],
                             'access' => $takedata['access']
-                        ];
+                        );
                         $this->session->set_userdata($showdata);
                         redirect('Administrator');
                     } else {

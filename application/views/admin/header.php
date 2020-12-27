@@ -19,6 +19,8 @@
   <link href="<?= base_url('assets/back/') ?>css/sb-admin-2.min.css" rel="stylesheet">
   <!-- Custom styles for this page -->
   <link href="<?= base_url('assets/back/') ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <!-- Custom styles for Sweetaalert-->
+  <link rel="stylesheet" href="<?= base_url('assets/back/') ?>vendor/sweetalert/dist/sweetalert2.min.css">
 
 </head>
 
@@ -272,25 +274,26 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Fajar Fidhi</span>
-                <img class="img-profile rounded-circle" src="<?= base_url('assets/back/') ?>img/undraw_profile.svg">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                  <?php echo $this->session->userdata('name'); ?></span>
+                <img class="img-profile rounded-circle" src="<?= base_url('assets/front/img/teams/') ?><?php echo $this->session->userdata('picture'); ?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?= base_url('Administrator/Profile'); ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?= base_url('Asministrator/Setting') ?>">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?= base_url('Asministrator/ActivityLog') ?>">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="#" onclick="logout()">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
