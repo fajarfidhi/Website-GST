@@ -21,6 +21,7 @@
   <link href="<?= base_url('assets/back/') ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
   <!-- Custom styles for Sweetaalert-->
   <link rel="stylesheet" href="<?= base_url('assets/back/') ?>vendor/sweetalert/dist/sweetalert2.min.css">
+  <script src="<?= base_url('assets/back/') ?>vendor/jquery/jquery.min.js"></script>
 
 </head>
 
@@ -30,7 +31,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -44,8 +45,8 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+      <li <?= $this->uri->segment(1) == 'Administrator' ? 'class="nav-item active"' : '' ?> class="nav-item">
+        <a class="nav-link" href="<?= base_url('Administrator'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -75,7 +76,7 @@
       -->
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <li <?= $this->uri->segment(1) == 'Products' ? 'class="nav-item active"' : '' ?> class="nav-item">
         <a class="nav-link" href="<?= base_url('Products'); ?>">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Products</span></a>
@@ -276,7 +277,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                   <?php echo $this->session->userdata('name'); ?></span>
-                <img class="img-profile rounded-circle" src="<?= base_url('assets/front/img/teams/') ?><?php echo $this->session->userdata('picture'); ?>">
+                <img class="img-profile rounded-circle" src="<?= base_url('assets/front/img/teams/') ?><?= $this->session->userdata('picture'); ?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -293,7 +294,7 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" onclick="logout()">
+                <a class="dropdown-item" href="<?= base_url('Administrator/signout'); ?>">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>

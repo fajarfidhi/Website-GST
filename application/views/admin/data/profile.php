@@ -37,7 +37,7 @@
                     Profile Picture
                 </div>
                 <div class="card-body text-center">
-                    <img class="img-profile img-account-profile rounded-circle mb-2" src="<?= base_url('assets/front/'); ?>img/teams/fajar.jpg" alt="">
+                    <img class="img-profile img-account-profile rounded-circle mb-2" src="<?= base_url('assets/front/img/teams/'); ?><?= $this->session->userdata('picture') ?>" alt="">
                     <div class="small font-italic text-muted mb-4">
                         JPG or PNG no large than 5 MB.
                     </div>
@@ -45,6 +45,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-xl-8">
             <!-- Account details card-->
             <div class="card mb-4">
@@ -53,51 +54,64 @@
                     <form>
                         <!-- Form Group (username)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="inputUsername">Username</label>
-                            <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="<?php echo "fajar"; ?>">
+                            <label class="small mb-1" for="txtusername">Username</label>
+                            <input class="form-control" id="txtusername" type="text" placeholder="Enter your username" value="<?= $_SESSION['username']; ?>">
                         </div>
-                        <!-- Form Row-->
                         <div class="form-row">
-                            <!-- Form Group (first name)-->
+                            <!-- Form Group (organization name)-->
                             <div class="form-group col-md-6">
-                                <label class="small mb-1" for="inputFirstName">First name</label>
-                                <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie">
+                                <label class="small mb-1" for="txtname">Name</label>
+                                <input class="form-control" id="txtname" type="text" placeholder="Enter your name" value="<?= $_SESSION['name']; ?>">
                             </div>
-                            <!-- Form Group (last name)-->
-                            <div class="form-group col-md-6">
-                                <label class="small mb-1" for="inputLastName">Last name</label>
-                                <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna">
-                            </div>
+                            <?php
+                            if ($_SESSION['access'] == "Administrator") {
+                            ?>
+                                <div class="form-group col-md-6">
+                                    <label class="small mb-1" for="txtaccess">Access</label>
+                                    <input class="form-control" id="txtaccess" type="text" placeholder="Enter your Access" value="<?= $_SESSION['access']; ?>">
+                                </div>
+                            <?php
+                            } else {
+                            ?>
+                                <!-- Form Group (location)-->
+                                <div class="form-group col-md-6">
+                                    <label class="small mb-1" for="txtaccess">Access</label>
+                                    <input class="form-control" id="txtaccess" type="text" placeholder="Enter your Access" disabled value="<?= $_SESSION['access']; ?>">
+                                </div>
+                            <?php
+                            }
+                            ?>
+
                         </div>
                         <!-- Form Row        -->
                         <div class="form-row">
                             <!-- Form Group (organization name)-->
-                            <div class="form-group col-md-6">
-                                <label class="small mb-1" for="inputOrgName">Organization name</label>
-                                <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
+                            <div class="form-group col-md-9">
+                                <label class="small mb-1" for="txtaddress">Address</label>
+                                <input class="form-control" id="txtaddress" type="text" placeholder="Enter your address" value="<?= $_SESSION['address']; ?>">
                             </div>
                             <!-- Form Group (location)-->
-                            <div class="form-group col-md-6">
-                                <label class="small mb-1" for="inputLocation">Location</label>
-                                <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
+                            <div class="form-group col-md-3">
+                                <label class="small mb-1" for="txtcity">City</label>
+                                <input class="form-control" id="txtcity" type="text" placeholder="Enter your city" value="<?= $_SESSION['city']; ?>">
                             </div>
                         </div>
                         <!-- Form Group (email address)-->
                         <div class="form-group">
-                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                            <label class="small mb-1" for="txtemail">Email address</label>
+                            <input class="form-control" id="txtemail" type="email" placeholder="Enter your email address" value="<?= $_SESSION['email']; ?>">
                         </div>
                         <!-- Form Row-->
                         <div class="form-row">
                             <!-- Form Group (phone number)-->
                             <div class="form-group col-md-6">
-                                <label class="small mb-1" for="inputPhone">Phone number</label>
-                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
+                                <label class="small mb-1" for="txtphone">Phone number</label>
+                                <input class="form-control" id="txtphone" type="text" placeholder="Enter your phone number" value="<?= $_SESSION['phone']; ?>">
                             </div>
                             <!-- Form Group (birthday)-->
                             <div class="form-group col-md-6">
-                                <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
+                                <label class="small mb-1" for="txtbirthday">Birthday</label>
+                                <input class="form-control" id="txtbirthday" type="text" name="birthday" placeholder="Enter your birthday" value="<?= date("d-F-Y", strtotime($_SESSION['birthday'])) ?>">
                             </div>
                         </div>
                         <!-- Save changes button-->

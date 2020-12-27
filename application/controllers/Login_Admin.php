@@ -3,13 +3,13 @@
 /**
  * undocumented class
  */
-class Login_Admin extends CI_Controller
+class Login_admin extends CI_Controller
 {
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
-        $this->load->model('Model_Admin_Login');
-        if ($this->session->userdata('status') != true) {
+        $this->load->model('Model_admin_login');
+        if ($this->session->userdata('actived') == 1) {
             redirect('Administrator');
         } else {
         }
@@ -35,27 +35,30 @@ class Login_Admin extends CI_Controller
             $email = $this->input->post('txtemail');
             $password = $this->input->post('txtpassword');
 
-            $cekemail = $this->Model_Admin_Login->cek_email($email);
+            $cekemail = $this->Model_admin_login->cek_email($email);
             if ($cekemail == false) {
                 $this->session->set_flashdata('messages', '<div class="alert alert-warning" role="alert">Email not registered! </div>');
                 redirect('Login_Admin');
             } else {
-                $cekpassword = $this->Model_Admin_Login->cek_password($email, $password);
+                $cekpassword = $this->Model_admin_login->cek_password($email, $password);
                 if ($cekpassword == true) {
-                    $cekactive = $this->Model_Admin_Login->cek_active($email, $password);
+                    $cekactive = $this->Model_admin_login->cek_active($email, $password);
                     if ($cekactive['actived'] == 1) {
-                        $takedata = $this->Model_Admin_Login->takedata($email, $password);
-                        $showdata = array(
+                        $takedata = $this->Model_admin_login->takedata($email, $password);
+                        $showdata = [
                             'iduser' => $takedata['iduser'],
                             'username' => $takedata['username'],
                             'email' => $takedata['email'],
                             'password' => $takedata['password'],
                             'name' => $takedata['name'],
+                            'birthday' => $takedata['birthday'],
+                            'address' => $takedata['address'],
+                            'city' => $takedata['city'],
+                            'phone' => $takedata['phone'],
                             'picture' => $takedata['picture'],
-                            'status' => true,
                             'actived' => $takedata['actived'],
                             'access' => $takedata['access']
-                        );
+                        ];
                         $this->session->set_userdata($showdata);
                         redirect('Administrator');
                     } else {
@@ -71,11 +74,5 @@ class Login_Admin extends CI_Controller
                 }
             }
         }
-    }
-
-    public function logout()
-    {
-        $this->session->sess_destroy();
-        redirect('Login_Admin');
     }
 }
