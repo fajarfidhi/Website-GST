@@ -67,27 +67,27 @@
                     <div class="form-group">
                         <input type="hidden" name="txt_id">
                         <label class="small mb-1" for="txtname">Name</label>
-                        <input type="text" class="form-control" id="txtname" name="txtname" placeholder="Name Types...">
+                        <input type="text" class="form-control form-control-sm" id="txtname" name="txtname" placeholder="Name Types...">
                     </div>
                     <div class="form-group">
-                        <label class="small mb-1" for="txt_name">Description</label>
-                        <textarea type="text" class="form-control" id="txt_name" name="txt_name" placeholder="Name Types..."></textarea>
+                        <label class="small mb-1" for="txtdescription">Description</label>
+                        <textarea type="text" class="form-control form-control-sm" id="txtdescription" name="txtdescription" placeholder="Name Types..."></textarea>
                     </div>
                     <div class="form-group">
                         <label class="small mb-1" for="txtpicture">Picture</label>
-                        <input type="file" class="form-control" id="txtpicture" name="txtpicture" placeholder="Name Types...">
+                        <input type="file" class="form-control form-control-sm" id="txtpicture" name="txtpicture" placeholder="Name Types...">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label class="small mb-1" for="txttype">Type Products</label>
-                            <select class="form-control" name="txttype" id="txttype">
+                            <select class="form-control form-control-sm" name="txttype" id="txttype">
                                 <option value="">--Type Product--</option>
                                 <option value="">IP Camera</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="small mb-1" for="txtstatus">Status</label>
-                            <select class="form-control" name="txtstatus" id="txtstatus">
+                            <select class="form-control form-control-sm" name="txtstatus" id="txtstatus">
                                 <option value="">--Status Product--</option>
                                 <option value="1">Actived</option>
                                 <option value="2">Non Actived</option>
@@ -97,7 +97,7 @@
 
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">
                         Close
                     </button>
                     <div class="float-right">

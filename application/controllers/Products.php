@@ -35,7 +35,7 @@ class Products extends CI_Controller
             $list[] = $row->name;
             $list[] = substr($row->description, 0, 20);
             if ($row->status == 1) {
-                $list[] = '<span class="badge badge-primary">Active</span>';
+                $list[] = '<span class="badge badge-success">Active</span>';
             } else {
                 $list[] = '<span class="badge badge-warning">Non Aktive</span>';
             }
@@ -52,16 +52,57 @@ class Products extends CI_Controller
 
     public function detail($idproduct)
     {
+        $data = $this->Model_product->read_by_id($idproduct);
+        echo json_encode($data);
+    }
+
+    public function addsave($data)
+    {
         # code...
     }
 
-    public function update($idproduct)
+    public function updatesave($idproduct)
     {
-        # code...
+        $status = array('success' => false, 'error' => false, 'messagess' => array());
+        $this->form_validation->set_rules('txtname', 'Products Name', 'required|trim');
+        $this->form_validation->set_rules('txttype', 'Type Name', 'required|trim');
+        $this->form_validation->set_rules('txtstatus', 'Product Status', 'required|trim');
+        $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
+
+        if ($this->form_validation->run() == FALSE) {
+            foreach ($_POST as $key => $value) {
+                $status['messagess'][$key] = form_error($key);
+            }
+        } else {
+            $cek_name = $this->model_admin_product->cek_name($this->input->post('txtname'));
+            if ($cek_name->num_rows() > 0) {
+                $status['error'] = true; // error true but name ready on database
+            } else {
+                $idproduct = $this->input->post('txtidproduct');
+                $data = array(
+                    'name' => $this->input->post('txtname'),
+                    'description' => $this->input->post('txtdescription'),
+                    'picture' => $this->input->post('txtpicture'),
+                    'idtype' => $this->input->post('txtidtype'),
+                    'datecreate' => date('Y-m-d H:i:s'),
+                    'usercreate' => $_SESSION['iduser'],
+                    'status' => $this->input->post('txtstatus')
+                );
+                $this->Model_admin_product->update_save($idproduct, $data);
+                $status['success'] = true; // save produc bat not valid data
+            }
+        }
+        echo json_encode($status);
     }
 
     public function delete($idproduct)
     {
-        # code...
+        $data = $this->Model_product->delete_by_id($idproduct);
+        if ($data->num_rows == 0) {
+            $messagess = true;
+        } else {
+            $messagess = false;
+        }
+        echo json_encode($messagess);
     }
 }
