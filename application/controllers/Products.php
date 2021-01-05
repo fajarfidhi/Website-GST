@@ -8,7 +8,7 @@ class Products extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Model_admin_product');
+        $this->load->model('Model_admin');
         if ($this->session->userdata('actived') == 1) {
         } else {
             redirect('Login_Admin');
@@ -24,16 +24,16 @@ class Products extends CI_Controller
 
     public function readall()
     {
-        $takedata = $this->Model_admin_product->read_all();
+        $takedata = $this->Model_admin->read_all_products();
         $data = array();
         $no = 0;
-        foreach ($takedata->result() as $row) {
+        foreach ($takedata as $row) {
             $no++;
             $list = array();
             $list[] = $no;
             $list[] = '<img src="' . base_url() . 'assets/front/img/product/' . $row->picture . '" class="img-thumbnail" width="100" height="50" />';
             $list[] = $row->name;
-            $list[] = substr($row->description, 0, 20);
+            $list[] = substr($row->description, 0, 40);
             if ($row->status == 1) {
                 $list[] = '<span class="badge badge-success">Active</span>';
             } else {
@@ -52,7 +52,7 @@ class Products extends CI_Controller
 
     public function detail($idproduct)
     {
-        $data = $this->Model_product->read_by_id($idproduct);
+        $data = $this->Model_admin->read_by_id_product($idproduct);
         echo json_encode($data);
     }
 
@@ -74,7 +74,7 @@ class Products extends CI_Controller
                 $status['messagess'][$key] = form_error($key);
             }
         } else {
-            $cek_name = $this->model_admin_product->cek_name($this->input->post('txtname'));
+            $cek_name = $this->model_admin->cek_name_product($this->input->post('txtname'));
             if ($cek_name->num_rows() > 0) {
                 $status['error'] = true; // error true but name ready on database
             } else {
@@ -88,7 +88,7 @@ class Products extends CI_Controller
                     'usercreate' => $_SESSION['iduser'],
                     'status' => $this->input->post('txtstatus')
                 );
-                $this->Model_admin_product->update_save($idproduct, $data);
+                $this->Model_admin->update_save_product($idproduct, $data);
                 $status['success'] = true; // save produc bat not valid data
             }
         }
@@ -97,7 +97,7 @@ class Products extends CI_Controller
 
     public function delete($idproduct)
     {
-        $data = $this->Model_product->delete_by_id($idproduct);
+        $data = $this->Model_admin->delete_by_id_product($idproduct);
         if ($data->num_rows == 0) {
             $messagess = true;
         } else {

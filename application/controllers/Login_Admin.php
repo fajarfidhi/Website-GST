@@ -8,7 +8,7 @@ class Login_admin extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Model_admin_login');
+        $this->load->model('Model_admin');
         if ($this->session->userdata('actived') == 1) {
             redirect('Administrator');
         } else {
@@ -35,16 +35,16 @@ class Login_admin extends CI_Controller
             $email = $this->input->post('txtemail');
             $password = $this->input->post('txtpassword');
 
-            $cekemail = $this->Model_admin_login->cek_email($email);
+            $cekemail = $this->Model_admin->cek_email_login($email);
             if ($cekemail == false) {
                 $this->session->set_flashdata('messages', '<div class="alert alert-warning" role="alert">Email not registered! </div>');
                 redirect('Login_Admin');
             } else {
-                $cekpassword = $this->Model_admin_login->cek_password($email, $password);
+                $cekpassword = $this->Model_admin->cek_password_login($email, $password);
                 if ($cekpassword == true) {
-                    $cekactive = $this->Model_admin_login->cek_active($email, $password);
+                    $cekactive = $this->Model_admin->cek_active_login($email, $password);
                     if ($cekactive['actived'] == 1) {
-                        $takedata = $this->Model_admin_login->takedata($email, $password);
+                        $takedata = $this->Model_admin->take_data_login($email, $password);
                         $showdata = [
                             'iduser' => $takedata['iduser'],
                             'username' => $takedata['username'],

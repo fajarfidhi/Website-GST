@@ -31,7 +31,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -83,26 +83,26 @@
       </li>
 
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
+      <li <?= $this->uri->segment(1) == 'Portfolio' ? 'class="nav-item active"' : '' ?> class="nav-item">
         <a class="nav-link" href="<?= base_url('Portfolio') ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Portfolio</span></a>
       </li>
 
-      <li class="nav-item">
+      <li <?= $this->uri->segment(1) == 'Teams' ? 'class="nav-item active"' : '' ?> class="nav-item">
         <a class="nav-link" href="<?= base_url('Teams') ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Teams</span></a>
       </li>
 
-      <li class="nav-item">
+      <li <?= $this->uri->segment(1) == 'CLients' ? 'class="nav-item active"' : '' ?> class="nav-item">
         <a class="nav-link" href="<?= base_url('Clients'); ?>">
           <i class="fas fa-fw fa-table"></i>
-          <span>Clienta</span></a>
+          <span>Clients</span></a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Company Profile') ?>">
+      <li <?= $this->uri->segment(1) == 'Company_profile' ? 'class="nav-item active"' : '' ?> class="nav-item">
+        <a class="nav-link" href="<?= base_url('Company_profile') ?>">
           <i class="fas fa-fw fa-table"></i>
           <span>Company Profile</span></a>
       </li>
