@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group">
                         <label class="small mb-1" for="txtpicture">Picture</label>
-                        <input type="file" class="form-control form-control-sm" id="txtpicture" name="txtpicture" placeholder="Name Types...">
+                        <input type="file" class="picture form-control form-control-sm" id="txtpicture" name="txtpicture" placeholder="Name Types...">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -160,6 +160,109 @@
         $('.modal-title').text('Add New Products');
         $('.form-group').removeClass('has-error');
         $('.help-block').empty();
+        $('#btn_save').attr('disabled', false);
+    }
+
+    function detail_id($idproduct) {
+
+    }
+
+    function update_id($idproduct) {
+        mode = 'update';
+        $('#myModal').modal('show');
+        $('#myForm')[0].reset();
+        $('#btn_reset').hide();
+        $('#btn_save').text('Update');
+        $('.modal-title').text('Update Product');
+        $('.form-group').removeClass('has-error');
+        $('.help-block').empty();
+    }
+
+    function btnSave() {
+
+        $('#btn_save').text('Processing...');
+        $('#btn_save').attr('disabled', true);
+        var url;
+
+        if (mode == 'add') {
+            url = "<?= base_url('Products/save'); ?>";
+        } else {
+            url = "<?= base_url('Products/update'); ?>";
+        }
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            dataType: 'json',
+            data: $('#myForm').serialize(),
+            success: function(messsagess) {
+                if (messsagess.success == true) {
+                    $('#txtname').removeClass('is-invalid');
+                    $('.form-group').removeClass('has-error').removeClass('has-success');
+                    $('.text-danger').remove();
+                    $('#myForm')[0].reset();
+                    $('#txtname').focus();
+                    reload_table();
+                    if (mode == 'add') {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data succesfull saved.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        $('#myModal').modal('show');
+                    } else {
+                        $('#myModal').modal('hide');
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data succesfull update.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                }
+            }
+
+        })
+    }
+
+    function delete_id($idproduct) {
+        Swal.fire({
+                title: "Are you sure?",
+                text: "But you will still be able to retrieve this file.",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                    $.ajax({
+                        url: "<?= base_url('Products/delete') ?>/" + idproduct,
+                        type: 'POST',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#myModal').modal('hide');
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Data succesfull delete.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            reload_table();
+                        }
+                    })
+                } else {
+                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                }
+            }
+        );
     }
 </script>
 </div>

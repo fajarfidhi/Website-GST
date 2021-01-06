@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="<?= base_url('assets/back/') ?>vendor/sweetalert/dist/sweetalert2.min.css">
   <script src="<?= base_url('assets/back/') ?>vendor/jquery/jquery.min.js"></script>
 
+  <!-- sweet alert-->
+  <link rel="stylesheet" href="<?= base_url('assets/back/') ?>vendor/sweetalert/dist/sweetalert2.min.css">
 </head>
 
 <body id="page-top">
