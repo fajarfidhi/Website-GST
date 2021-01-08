@@ -52,6 +52,7 @@
     </div>
 </div>
 
+<!----------------------------------------------- MODAL ADD/UPDATE DATA --------------------->
 <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -101,10 +102,10 @@
                         Close
                     </button>
                     <div class="float-right">
-                        <button type="reset" class="btn btn-secondary" id="btn_reset" onclick="btnReset()">
+                        <button type="reset" class="btn btn-secondary" id="btn_reset">
                             <i class="fa fa-undo"></i>
                         </button>
-                        <button type="button" class="btn btn-primary" id="btn_save" onclick="btnSave()"></button>
+                        <button type="button" class="btn" id="btn_save"></button>
                     </div>
                 </div>
             </form>
@@ -114,6 +115,47 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+
+<!-------------------------------------------  MODAL DETAIL -------------------------->
+<div class="modal fade" id="myModalDetail">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row text-center">
+                    <div class="col-md-12 text-center" style="position: center;">
+                        <img name="detail_picture" src="<?= base_url(); ?>/assets/front/img/product/camera-ip.png" alt="">
+                    </div>
+                    <div class="col-md-12">
+                        <h5 id="detail_name"></h5>
+                    </div>
+                    <hr>
+                    <div class="col-md-12">
+                        <p id="detail_description"></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">
+                    Close
+                </button>
+                <div class="float-right">
+                    <button type="button" class="btn" data-dismiss="modal" id="btn_update"></button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
 
 <!-- /.container-fluid -->
 <script type="text/javascript">
@@ -154,79 +196,105 @@
         mode = 'add';
         $('#myModal').modal('show');
         $('#myForm')[0].reset();
-        $('#btn_reset').show();
-        $('#btn_reset').text('Reset');
-        $('#btn_save').text('Save');
+        $('#btn_reset').show().text('Reset').addClass('btn-dark');
+        $('#btn_save').show().text('Save New Products').addClass('btn-info');
         $('.modal-title').text('Add New Products');
         $('.form-group').removeClass('has-error');
         $('.help-block').empty();
         $('#btn_save').attr('disabled', false);
     }
 
-    function detail_id($idproduct) {
-
+    function detail_id(idproducts) {
+        $('#myModalDetail').modal('show');
+        $('.modal-title').text('Detail Products');
+        $('#btn_update').show();
+        $('#btn_update').text('Update Products').addClass('btn-secondary');
+        $.ajax({
+            url: "<?php echo base_url('Products/detail'); ?>/" + idproducts,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                $('[id="detail_name"]').val(data.name);
+                $('#detail_description').val(data.description);
+            }
+        })
     }
+
+    $(function() {
+        $('#btn_update').on('click', function(idproduct) {
+            mode = 'update';
+            $('myModalDetail').modal('hide');
+            $('#myModal').modal('show');
+            $('#btn_reset').hide();
+            $('.modal-title').text('Update Product');
+            $('#btn_update').hide();
+            $('#btn_save').show().text('Save Update').addClass('btn-info');
+        });
+    })
 
     function update_id($idproduct) {
         mode = 'update';
+        $('myModalDetail').modal('hide');
         $('#myModal').modal('show');
-        $('#myForm')[0].reset();
         $('#btn_reset').hide();
-        $('#btn_save').text('Update');
+        $('#btn_save').text('Save Update').addClass('btn-info');
         $('.modal-title').text('Update Product');
         $('.form-group').removeClass('has-error');
         $('.help-block').empty();
     }
 
-    function btnSave() {
+    $(function() {
+        $('#btn_save').on('click', function() {
+            $('#btn_save').text('Processing...');
+            $('#btn_save').attr('disabled', true);
+            var url;
 
-        $('#btn_save').text('Processing...');
-        $('#btn_save').attr('disabled', true);
-        var url;
-
-        if (mode == 'add') {
-            url = "<?= base_url('Products/save'); ?>";
-        } else {
-            url = "<?= base_url('Products/update'); ?>";
-        }
-
-        $.ajax({
-            url: url,
-            type: 'POST',
-            dataType: 'json',
-            data: $('#myForm').serialize(),
-            success: function(messsagess) {
-                if (messsagess.success == true) {
-                    $('#txtname').removeClass('is-invalid');
-                    $('.form-group').removeClass('has-error').removeClass('has-success');
-                    $('.text-danger').remove();
-                    $('#myForm')[0].reset();
-                    $('#txtname').focus();
-                    reload_table();
-                    if (mode == 'add') {
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: 'Data succesfull saved.',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        $('#myModal').modal('show');
-                    } else {
-                        $('#myModal').modal('hide');
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: 'Data succesfull update.',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                    }
-                }
+            if (mode == 'add') {
+                url = "<?= base_url('Products/save'); ?>";
+            } else {
+                url = "<?= base_url('Products/update'); ?>";
             }
 
+            $.ajax({
+                url: url,
+                type: 'POST',
+                dataType: 'json',
+                data: $('#myForm').serialize(),
+                success: function(messsagess) {
+                    if (messsagess.success == true) {
+                        $('#txtname').removeClass('is-invalid');
+                        $('.form-group').removeClass('has-error').removeClass('has-success');
+                        $('.text-danger').remove();
+                        $('#myForm')[0].reset();
+                        $('#txtname').focus();
+                        reload_table();
+                        if (mode == 'add') {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Data succesfull saved.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            $('#myModal').modal('show');
+                        } else {
+                            $('#myModal').modal('hide');
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Data succesfull update.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+                    }
+                }
+
+            })
         })
-    }
+    })
+
 
     function delete_id($idproduct) {
         Swal.fire({

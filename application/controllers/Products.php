@@ -40,9 +40,9 @@ class Products extends CI_Controller
                 $list[] = '<span class="badge badge-warning">Non Aktive</span>';
             }
             $list[] =
-                '<button type="button" class="btn btn-info btn-sm btn-flat" onclick="detail_id(' . "'" . $row->idproduct . "'" . ')">Detail</button>
-                <button type="button" class="btn btn-primary btn-sm btn-flat" onclick="update_id(' . "'" . $row->idproduct . "'" . ')">Update</button>
-                    <button type="button" class="btn btn-warning btn-sm btn-flat" onclick="delete_id(' . "'" . $row->idproduct . "'" . ')">Delete</button>';
+                '<button type="button" class="btn btn-info btn-sm btn-flat" onclick="detail_id(' . "'" . $row->idproducts . "'" . ')">Detail</button>
+                <button type="button" class="btn btn-primary btn-sm btn-flat" onclick="update_id(' . "'" . $row->idproducts . "'" . ')">Update</button>
+                    <button type="button" class="btn btn-danger btn-sm btn-flat" onclick="delete_id(' . "'" . $row->idproducts . "'" . ')">Delete</button>';
             $data[] = $list;
         }
         $output = array('data' => $data);

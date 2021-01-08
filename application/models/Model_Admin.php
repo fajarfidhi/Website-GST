@@ -43,29 +43,32 @@ class Model_admin extends CI_Model
 
     public function read_all_products()
     {
-        return $this->db->get('product')->result();
+        return $this->db->get('products')->result();
     }
 
     public function read_by_id_product($idproduct)
     {
-        return $this->db->get('product')->result_array();
+        $this->db->select('*');
+        $this->db->where('idproducts', $idproduct);
+        $query = $this->db->get('products');
+        return $query->row();
     }
 
     public function add_save_product($data)
     {
-        $this->db->insert('product', $data);
+        $this->db->insert('products', $data);
     }
 
     public function update_save_product($idproduct, $data)
     {
-        $this->db->where('idproduct', $idproduct);
-        $this->db->update('product', $data);
+        $this->db->where('idproducts', $idproduct);
+        $this->db->update('products', $data);
     }
 
     public function delete_product($idproduct)
     {
-        $this->db->where('idproduct', $idproduct);
-        $this->db->delete('product');
+        $this->db->where('idproducts', $idproduct);
+        $this->db->delete('products');
     }
 
     // ---------------------MODEL PORTFOLIO
