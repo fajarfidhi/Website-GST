@@ -9,7 +9,7 @@ class Model_main extends CI_Model
 
     public function readproduct()
     {
-        $query = $this->db->get('product');
+        $query = $this->db->get('products');
         return $query->result();
     }
 

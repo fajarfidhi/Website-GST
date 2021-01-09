@@ -129,9 +129,9 @@
             <div class="modal-body">
                 <div class="row text-center">
                     <div class="col-md-12 text-center" style="position: center;">
-                        <img name="detail_picture" src="<?= base_url(); ?>/assets/front/img/product/camera-ip.png" alt="">
+                        <div id="detail_picture"></div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 font-weight-bold">
                         <h5 id="detail_name"></h5>
                     </div>
                     <hr>
@@ -210,15 +210,17 @@
         $('#btn_update').show();
         $('#btn_update').text('Update Products').addClass('btn-secondary');
         $.ajax({
-            url: "<?php echo base_url('Products/detail'); ?>/" + idproducts,
+            url: "<?= base_url('Products/detail'); ?>/" + idproducts,
             type: 'GET',
-            dataType: 'json',
+            dataType: 'JSON',
             success: function(data) {
-                console.log(data);
-                $('[id="detail_name"]').val(data.name);
-                $('#detail_description').val(data.description);
+                img = new Image();
+                img.src = "<?= base_url('/assets/front/img/product/'); ?>" + data.picture;
+                $('#detail_picture').append(img);
+                $('#detail_name').html(data.name);
+                $('#detail_description').html(data.description);
             }
-        })
+        });
     }
 
     $(function() {
