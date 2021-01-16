@@ -111,7 +111,7 @@
 								<img class="img-fluid" src="<?= base_url(); ?>/assets/front/img/banner/<?php echo $show->picture; ?>" alt="First slide">
 								<div class="carousel-caption d-none d-md-block">
 									<h3 class="text-white"><?php echo $show->name; ?></h3>
-									<p>this is the subcontent you can use this</p>
+									<p><?php echo $show->description; ?></p>
 								</div>
 							</div>
 						<?php
@@ -397,19 +397,19 @@
 							<div class="address">
 								<i class="icofont-google-map"></i>
 								<h4>Location:</h4>
-								<p>Griya Kencana Asri G-11, Surabaya</p>
+								<p><?php echo $company['district']; ?>, <?php echo $company['city']; ?></p>
 							</div>
 
 							<div class="email">
 								<i class="icofont-envelope"></i>
 								<h4>Email:</h4>
-								<p>info@grahasolusi.co.is</p>
+								<p><?php echo $company['email1'] ?></p>
 							</div>
 
 							<div class="phone">
 								<i class="icofont-phone"></i>
 								<h4>Call:</h4>
-								<p>+1 5589 55488 55s</p>
+								<p><?php echo $company['telepon1']; ?></p>
 							</div>
 
 						</div>
@@ -462,17 +462,19 @@
 				<div class="row">
 
 					<div class="col-lg-5 col-md-6 footer-contact">
-						<h3>PT. GRAHA SOLUSI TEKNOLOGI</h3>
+						<h3><?php echo strtoupper($company['name']); ?></h3>
 						<p>
-							Griya Kencana Asri G-11 <br>
-							Surabaya, 60296<br>
-							Indonesia <br><br>
-							<strong>Phone:</strong> (031) 8722777<br>
-							<strong>Email:</strong> info@grahasolusi.co.id<br>
+							<?php echo $company['district']; ?> <br>
+							<?php echo $company['address']; ?> <br>
+							<?php echo $company['city']; ?>, <?php echo $company['poscode']; ?><br>
+							<?php echo $company['country']; ?> <br><br>
+							<strong>Phone:</strong> <?php echo $company['telepon1']; ?><br>
+							<strong>Email:</strong> <?php echo $company['email1']; ?><br>
 						</p>
 					</div>
 
 					<div class="col-lg-3 col-md-6 footer-links">
+						<!--
 						<h4>Useful Links</h4>
 						<ul>
 							<li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -481,6 +483,7 @@
 							<li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
 							<li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
 						</ul>
+						-->
 					</div>
 
 					<!--
@@ -513,7 +516,7 @@
 
 			<div class="mr-md-auto text-center text-md-left">
 				<div class="copyright">
-					&copy; Copyright <strong><span>PT. Graha Solusi Teknologi</span></strong>. All Rights Reserved
+					&copy; Copyright <strong><span><?php echo $company['name']; ?></span></strong>. All Rights Reserved
 				</div>
 				<div class="credits">
 					<!-- All the links in the footer should remain intact. -->
