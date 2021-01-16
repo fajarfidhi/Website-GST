@@ -14,6 +14,8 @@ class Dasboard extends CI_Controller
 		$data['product'] = $this->Model_main->readproduct();
 		$data['teams'] = $this->Model_main->readteams();
 		$data['clients'] = $this->Model_main->readclients();
+		$data['company'] = $this->Model_main->readcompany();
+		$data['banner'] = $this->Model_main->readbanner();
 		$this->load->view('body', $data);
 	}
 }

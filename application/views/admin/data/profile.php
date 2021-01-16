@@ -68,7 +68,9 @@
                             ?>
                                 <div class="form-group col-md-6">
                                     <label class="small mb-1" for="txtaccess">Access</label>
-                                    <input class="form-control" id="txtaccess" type="text" placeholder="Enter your Access" value="<?= $_SESSION['access']; ?>">
+                                    <select name="txtaccess" id="txtaccess" class="form-control">
+                                        <option value=""><?= $_SESSION['access'] ?></option>
+                                    </select>
                                 </div>
                             <?php
                             } else {

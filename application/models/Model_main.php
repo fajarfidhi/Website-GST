@@ -34,4 +34,19 @@ class Model_main extends CI_Model
     {
         # code...
     }
+
+    public function readcompany()
+    {
+        $this->db->select('*');
+        $this->db->where('idcompany', 1);
+        $query = $this->db->get('company')->row_array();
+        return $query;
+    }
+
+    public function readbanner()
+    {
+        $this->db->select('*');
+        $query = $this->db->get('banner');
+        return $query->result();
+    }
 }

@@ -66,7 +66,7 @@
                 <div class="modal-body">
                     <div id="the-message"></div>
                     <div class="form-group">
-                        <input type="hidden" name="txt_id">
+                        <input type="hidden" name="txtid">
                         <label class="small mb-1" for="txtname">Name</label>
                         <input type="text" class="form-control form-control-sm" id="txtname" name="txtname" placeholder="Name Types...">
                     </div>
@@ -79,11 +79,13 @@
                         <input type="file" class="picture form-control form-control-sm" id="txtpicture" name="txtpicture" placeholder="Name Types...">
                     </div>
                     <div class="form-row">
+                        <input type="hidden" name="txtdatecreate">
+                        <input type="hidden" name="txtusercreate">
                         <div class="form-group col-md-6">
                             <label class="small mb-1" for="txttype">Type Products</label>
                             <select class="form-control form-control-sm" name="txttype" id="txttype">
                                 <option value="">--Type Product--</option>
-                                <option value="">IP Camera</option>
+                                <option value="1">IP Camera</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
@@ -95,7 +97,6 @@
                             </select>
                         </div>
                     </div>
-
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-warning" data-dismiss="modal">
@@ -122,32 +123,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title"></h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" id="btn_close" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="row text-center">
-                    <div class="col-md-12 text-center" style="position: center;">
-                        <div id="detail_picture"></div>
-                    </div>
-                    <div class="col-md-12 font-weight-bold">
-                        <h5 id="detail_name"></h5>
-                    </div>
-                    <hr>
-                    <div class="col-md-12">
-                        <p id="detail_description"></p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-warning" data-dismiss="modal">
-                    Close
-                </button>
-                <div class="float-right">
-                    <button type="button" class="btn" data-dismiss="modal" id="btn_update"></button>
-                </div>
+            <div id="show_detail">
             </div>
         </div>
         <!-- /.modal-content -->
@@ -189,7 +169,7 @@
     });
 
     function reload_table() {
-        table.ajax.reload(null, false);
+        table.ajax.reload(null, false)
     }
 
     function btn_add() {
@@ -207,43 +187,40 @@
     function detail_id(idproducts) {
         $('#myModalDetail').modal('show');
         $('.modal-title').text('Detail Products');
-        $('#btn_update').show();
-        $('#btn_update').text('Update Products').addClass('btn-secondary');
         $.ajax({
             url: "<?= base_url('Products/detail'); ?>/" + idproducts,
             type: 'GET',
             dataType: 'JSON',
             success: function(data) {
-                img = new Image();
-                img.src = "<?= base_url('/assets/front/img/product/'); ?>" + data.picture;
-                $('#detail_picture').append(img);
-                $('#detail_name').html(data.name);
-                $('#detail_description').html(data.description);
-            }
+                $('#show_detail').html(data.datane);
+            },
         });
     }
 
-    $(function() {
-        $('#btn_update').on('click', function(idproduct) {
-            mode = 'update';
-            $('myModalDetail').modal('hide');
-            $('#myModal').modal('show');
-            $('#btn_reset').hide();
-            $('.modal-title').text('Update Product');
-            $('#btn_update').hide();
-            $('#btn_save').show().text('Save Update').addClass('btn-info');
-        });
-    })
-
-    function update_id($idproduct) {
+    function update_id(idproducts) {
         mode = 'update';
-        $('myModalDetail').modal('hide');
-        $('#myModal').modal('show');
-        $('#btn_reset').hide();
-        $('#btn_save').text('Save Update').addClass('btn-info');
-        $('.modal-title').text('Update Product');
+        $('#myForm')[0].reset();
         $('.form-group').removeClass('has-error');
         $('.help-block').empty();
+        $.ajax({
+            url: "<?= base_url('Products/update_show'); ?>/" + idproducts,
+            type: 'GET',
+            dataType: 'JSON',
+            success: function(data) {
+                $('#myModal').modal('show');
+                $('#btn_reset').hide();
+                $('#btn_save').text('Save Update').addClass('btn-info');
+                $('.modal-title').text('Update Product');
+                $('[name="txtid"]').val(data.idproducts);
+                $('[name="txtname"]').val(data.name);
+                $('[name="txtdescription"]').val(data.description);
+                $('[name="txtpicture"]').val(data.picture);
+                $('[name="txttype"]').val(data.idtype);
+                $('[name="txtdatecreate"]').val(data.datecreate);
+                $('[name="txtusercreate"]').val(data.usercreate);
+                $('[name="txtstatus"]').val(data.status);
+            },
+        });
     }
 
     $(function() {

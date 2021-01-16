@@ -51,6 +51,15 @@ class Model_admin extends CI_Model
         $this->db->select('*');
         $this->db->where('idproducts', $idproduct);
         $query = $this->db->get('products');
+        return $query;
+    }
+
+    public function read_update_per_id($idproducts)
+    {
+        $this->db->select('*');
+        $this->db->limit(1);
+        $this->db->where('idproducts', $idproducts);
+        $query = $this->db->get('products');
         return $query->row();
     }
 

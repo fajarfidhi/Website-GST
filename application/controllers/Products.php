@@ -52,7 +52,41 @@ class Products extends CI_Controller
 
     public function detail($idproduct)
     {
-        $data = $this->Model_admin->read_by_id_product($idproduct);
+        $take = $this->Model_admin->read_by_id_product($idproduct);
+        foreach ($take->result_array() as $key) {
+            $data['datane'] = '<div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 align-content-center">
+                        <div>
+                            <img src="' . base_url() . 'assets/front/img/product/' . $key["picture"] . '"/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="col-md-12 text-center font-weight-bold">
+                            <h5>' . $key["name"] . '</h5>
+                        </div>
+                        <hr>
+                        <div class="col-md-12">
+                            <p>' . $key["description"] . '</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" id="btn_close" class="btn btn-warning" data-dismiss="modal">
+                    Close
+                </button>
+                <div class="float-right">
+                    <button type="button" class="btn btn-info" data-dismiss="modal" onclick="update_id(' . $key["idproducts"] . ')" >Update Products</button>
+                </div>
+            </div>';
+        }
+        echo json_encode($data);
+    }
+
+    public function update_show($idproducts)
+    {
+        $data = $this->Model_admin->read_update_per_id($idproducts);
         echo json_encode($data);
     }
 

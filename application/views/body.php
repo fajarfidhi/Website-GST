@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-	<title>PT. GRAHA SOLUSI TEKNOLOGI</title>
+	<title><?= $company['name']; ?></title>
 	<meta content="" name="descriptison">
 	<meta content="" name="keywords">
 
@@ -39,16 +39,16 @@
 	<div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
 		<div class="container d-flex">
 			<div class="contact-info mr-auto">
-				<i class="icofont-envelope"></i> <a href="mailto:contact@example.com">sales@gstsurabaya.com</a>
-				<i class="icofont-phone"></i> (031) 8722777
-				<i class="icofont-google-map"></i> Griya Kencana Asri G-11, Surabaya
+				<i class="icofont-envelope"></i> <a href="mailto:contact@example.com"><?= $company['email1']; ?></a>
+				<i class="icofont-phone"></i> <?= $company['telepon1']; ?>
+				<i class="icofont-google-map"></i> <?= $company['address'] ?>, Surabaya
 			</div>
 			<div class="social-links">
-				<a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-				<a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-				<a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-				<a href="#" class="skype"><i class="icofont-skype"></i></a>
-				<a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+				<a href="#" id="head_twitter" class="twitter"><i class="icofont-twitter"></i></a>
+				<a href="#" id="head_facebook" class="facebook"><i class="icofont-facebook"></i></a>
+				<a href="#" id="head_instagram" class="instagram"><i class="icofont-instagram"></i></a>
+				<a href="#" id="head_skype" class="skype"><i class="icofont-skype"></i></a>
+				<a href="#" id="head_linkedin" class="linkedin"><i class="icofont-linkedin"></i></i></a>
 			</div>
 		</div>
 	</div>
@@ -57,7 +57,7 @@
 	<header id="header" class="fixed-top">
 		<div class="container d-flex align-items-center">
 
-			<h1 class="logo mr-auto"><a href="">PT. GRAHA SOLUSI TEKNOLOGI</a></h1>
+			<h1 class="logo mr-auto"><a href=""><?= strtoupper($company['name']); ?></a></h1>
 			<!-- Uncomment below if you prefer to use an image logo -->
 			<!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -79,74 +79,60 @@
 		</div>
 	</header><!-- End Header -->
 
-	<!-- ======= Hero Section ======= -->
-	<section id="hero" class="d-flex align-items-center">
-		<div class="container">
-			<h1>Welcome to PT. Graha Solusi Teknologi</h1>
-			<h2>We are team of PT. Graha Solusi Teknologi your solution project</h2>
-			<a href="#about" class=" btn-get-started scrollto">Get Started</a>
-		</div>
-	</section><!-- End Hero -->
-
 	<main id="main">
-
-		<!-- ======= Why Us Section ======= -->
+		<!-- ======= Hero Section ======= -->
 		<section id="why-us" class="why-us">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-lg-4 d-flex align-items-stretch">
-						<div class="content">
-							<h3>Why Choose PT. GST?</h3>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-								Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus
-								optio ad corporis.
-							</p>
-							<div class="text-center">
-								<a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-8 d-flex align-items-stretch">
-						<div class="icon-boxes d-flex flex-column justify-content-center">
-							<div class="row">
-								<div class="col-xl-4 d-flex align-items-stretch">
-									<div class="icon-box mt-4 mt-xl-0">
-										<i class="bx bx-receipt"></i>
-										<h4>Corporis voluptates sit</h4>
-										<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
-											aliquip</p>
-									</div>
-								</div>
-								<div class="col-xl-4 d-flex align-items-stretch">
-									<div class="icon-box mt-4 mt-xl-0">
-										<i class="bx bx-cube-alt"></i>
-										<h4>Ullamco laboris ladore pan</h4>
-										<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-											deserunt</p>
-									</div>
-								</div>
-								<div class="col-xl-4 d-flex align-items-stretch">
-									<div class="icon-box mt-4 mt-xl-0">
-										<i class="bx bx-images"></i>
-										<h4>Labore consequatur</h4>
-										<p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis
-											facere</p>
-									</div>
+			<div class="container slideheader">
+				<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<?php
+						$banyak = $this->db->get('banner')->num_rows();
+						for ($i = 0; $i < $banyak; $i++) {
+						?>
+							<li data-target="#carouselExampleIndicators2" data-slide-to="<?php $i; ?>" class="
+									<?php if ($i == 0) {
+										echo "active";
+									} else {
+										echo "";
+									} ?>">
+							</li>
+						<?php
+						} ?>
+					</ol>
+					<div class="carousel-inner">
+						<?php
+						foreach ($banner as $show) {
+						?>
+							<div class="carousel-item <?php if ($show->idbanner == 1) {
+															echo "active";
+														} else {
+															echo "";
+														} ?>">
+								<img class="img-fluid" src="<?= base_url(); ?>/assets/front/img/banner/<?php echo $show->picture; ?>" alt="First slide">
+								<div class="carousel-caption d-none d-md-block">
+									<h3 class="text-white"><?php echo $show->name; ?></h3>
+									<p>this is the subcontent you can use this</p>
 								</div>
 							</div>
-						</div><!-- End .content-->
+						<?php
+						}
+						?>
 					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
 				</div>
-
 			</div>
-		</section><!-- End Why Us Section -->
+		</section>
 
 		<!-- ======= About Section ======= -->
 		<section id="about" class="about">
-			<div class="container-fluid">
+			<div class="container">
 
 				<div class="row">
 					<div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
@@ -633,6 +619,36 @@
 
 		$(function() {
 			$('[data-toggle="popover"]').popover()
+		})
+
+		$(function() {
+			$('#head_twitter').click(function() {
+				window.open('https://twitter.com/<?= $company['twitter']; ?>', '_blank');
+			})
+		})
+
+		$(function() {
+			$('#head_facebook').click(function() {
+				window.open('https://facebook.com/<?= $company['facebook']; ?>', '_blank');
+			})
+		})
+
+		$(function() {
+			$('#head_instagram').click(function() {
+				window.open('https://instagram.com/<?= $company['instagram']; ?>', '_blank');
+			})
+		})
+
+		$(function() {
+			$('#head_skype').click(function() {
+				window.open('https://skype.com/<?= $company['skype']; ?>', '_blank');
+			})
+		})
+
+		$(function() {
+			$('#head_linkedin').click(function() {
+				window.open('https://linkedin.com/<?= $company['linkedin']; ?>', '_blank');
+			})
 		})
 	</script>
 </body>
