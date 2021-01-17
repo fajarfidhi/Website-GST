@@ -64,11 +64,34 @@
 			<nav class="nav-menu d-none d-lg-block">
 				<ul>
 					<li class="active"><a href="#header">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#product">Product</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#teams">Teams</a></li>
-					<li><a href="#client">Client</a></li>
+					<?php
+					$menu_about = $this->db->get('about')->num_rows();
+					$menu_product = $this->db->get('products')->num_rows();
+					$menu_portfolio = $this->db->get('portfolio')->num_rows();
+					$menu_teams = $this->db->get('teams')->num_rows();
+					$menu_client = $this->db->get('client')->num_rows();
+					if ($menu_about == 0) {
+					} else {
+						echo '<li><a href="#about">About</a></li>';
+					}
+					if ($menu_product == 0) {
+					} else {
+						echo '<li><a href="#product">Product</a></li>';
+					}
+					if ($menu_portfolio == 0) {
+					} else {
+						echo '<li><a href="#portfolio">Portfolio</a></li>';
+					}
+					if ($menu_teams == 0) {
+						# code...
+					} else {
+						echo '<li><a href="#teams">Teams</a></li>';
+					}
+					if ($menu_client == 0) {
+					} else {
+						echo '<li><a href="#client">Client</a></li>';
+					}
+					?>
 					<li><a href="#contact">Contact</a></li>
 
 				</ul>
@@ -131,248 +154,257 @@
 		</section>
 
 		<!-- ======= About Section ======= -->
-		<section id="about" class="about">
+		<section id="about" class="about" style="margin-top:-10px; margin-bottom:-60px; padding-top:0px; background-color:whitesmoke ">
 			<div class="container">
 
 				<div class="row">
-					<div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
+					<div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" style="margin-left: 15px; width: 94%;margin-right: -15px">
 						<a href="https://www.youtube.com/watch?v=Y-K3Kqf6GjA" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
 					</div>
 
 					<div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-						<h3>Solution for your needs</h3>
-						<p>As a leading security solution provider, Dahua offers end-to-end solutions for various
-							applications and vertical industries including traffic management, government facilities,
-							retail, and banking & finance and so on. Application solutions such as Face Recognition and
-							LPR feature not only cameras, recorders, and VMS, but also open interfaces for convenient
-							3rd party integration.</p>
-
-						<div class="icon-box">
-							<div class="icon"><i class="bx bx-fingerprint"></i></div>
-							<h4 class="title"><a href="">Perimeter Protection</a></h4>
-							<p class="description">Dahua perimeter protection solution is designed to provide a
-								high-efficiency, reliable, cost-effective and visual system powered by artificial
-								intelligence technologye</p>
-						</div>
-
-						<div class="icon-box">
-							<div class="icon"><i class="bx bx-gift"></i></div>
-							<h4 class="title"><a href="">Face Recognition</a></h4>
-							<p class="description">Dahua Face Recognition solutions offer high accuracy of detection
-								rate and recognition rate with its advanced AI technology ,and can provide such
-								functions as Face Detection, Face Comparison, Intelligent Search, Face Image Search,
-								Face Database Management, Mobile App Linkage, Information Display, Video Full Color
-								,etc.</p>
-						</div>
-
-						<div class="icon-box">
-							<div class="icon"><i class="bx bx-atom"></i></div>
-							<h4 class="title"><a href="">Epidemic Safety Protection Solution</a></h4>
-							<p class="description">With the massive scope of the COVID-19 outbreak globally, various
-								countries have announced new regulations to combat the spread of this pandemic, such as
-								maintaining distance in essential activities, limiting in the number of people inside,
-								monitoring of people’s body temperature, etc.</p>
-						</div>
-
+						<?php
+						$take_about_header = $this->db->select('*')->limit(1)->where('status', 1)->get('about');
+						foreach ($take_about_header->result() as $about_header) {
+						?>
+							<h3><?php echo $about_header->name; ?></h3>
+							<p><?php echo $about_header->description; ?></p>
+						<?php
+						}
+						$take_about_body = $this->db->select('*')->limit(10, 1)->where('status', 1)->get('about');
+						foreach ($take_about_body->result() as $show_about) {
+						?>
+							<div class="icon-box">
+								<div class="icon"><i class="bx <?php echo $show_about->icon; ?>"></i></div>
+								<h4 class="title"><a href=""><?php echo $show_about->name; ?></a></h4>
+								<p class="description"><?php echo $show_about->description; ?></p>
+							</div>
+						<?php
+						}
+						?>
 					</div>
 				</div>
 
 			</div>
 		</section><!-- End About Section -->
+		<?php
+		$jumlah_products = $this->db->get('products')->num_rows();
+		if ($jumlah_products == 0) {
+		} else {
+		?>
+			<!-- ======= Services Section ======= -->
+			<section id="product" class="services">
+				<div class="container">
 
-		<!-- ======= Services Section ======= -->
-		<section id="product" class="services">
-			<div class="container">
+					<div class="section-title">
+						<h2>Products</h2>
+						<p>Abiding by the philosophy of "Innovation for All", Dahua offers a wide portfolio of
+							security-related products, ranging from IPC, NVR, HDCVI cameras, HCVR, PTZ cameras, thermal
+							cameras, Access Control, Video Intercom, Alarms, Mobile & Traffic products, display & control,
+							VMS and so on. Dahua products are based on an open platform that features easy integration with
+							third party partners through a standard SDK</p>
+					</div>
 
-				<div class="section-title">
-					<h2>Products</h2>
-					<p>Abiding by the philosophy of "Innovation for All", Dahua offers a wide portfolio of
-						security-related products, ranging from IPC, NVR, HDCVI cameras, HCVR, PTZ cameras, thermal
-						cameras, Access Control, Video Intercom, Alarms, Mobile & Traffic products, display & control,
-						VMS and so on. Dahua products are based on an open platform that features easy integration with
-						third party partners through a standard SDK</p>
-				</div>
-
-				<div class="row">
-					<?php foreach ($product as $prod) { ?>
-						<div class="col-lg-3 col-md-5 d-flex align-items-stretch mt-4">
-							<div class="icon-box">
-								<div class="icon">
-									<img src="<?= base_url('assets/front/'); ?>img/product/<?php echo $prod->picture; ?>" alt="">
+					<div class="row">
+						<?php foreach ($product as $prod) { ?>
+							<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 d-flex align-items-stretch mt-4">
+								<div class="icon-box">
+									<div class="icon">
+										<img src="<?= base_url('assets/front/'); ?>img/product/<?php echo $prod->picture; ?>" alt="">
+									</div>
+									<h4><a href=""><?php echo $prod->name; ?></a></h4>
+									<p><?php echo substr($prod->description, 0, 120); ?> ...</p>
 								</div>
-								<h4><a href=""><?php echo $prod->name; ?></a></h4>
-								<p><?php echo substr($prod->description, 0, 120); ?> ...</p>
 							</div>
-						</div>
-					<?php } ?>
-				</div>
-			</div>
-		</section><!-- End Services Section -->
-
-		<section id="portfolio" class="portfolio section-bg">
-			<div class="container" data-aos="fade-up">
-
-				<div class="section-title">
-					<h2>Portfolio</h2>
-					<p>Short description of the portfolio</p>
-				</div>
-
-				<div class="row">
-					<div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-						<ul id="portfolio-flters">
-							<li data-filter="*" class="filter-active">All</li>
-							<li data-filter=".filter-app">Camera</li>
-							<li data-filter=".filter-card">Access Control</li>
-							<li data-filter=".filter-web">Management</li>
-							<li data-filter=".filter-web">Video</li>
-						</ul>
+						<?php } ?>
 					</div>
 				</div>
+			</section><!-- End Services Section -->
+		<?php
+		}
+		$jumlah_portfolio =  $this->db->get('portfolio')->num_rows();
+		if ($jumlah_portfolio == 0) {
+		} else {
+		?>
+			<section id="portfolio" class="portfolio section-bg">
+				<div class="container" data-aos="fade-up">
 
-				<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+					<div class="section-title">
+						<h2>Portfolio</h2>
+						<p>Short description of the portfolio</p>
+					</div>
 
-					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-						<div class="portfolio-wrap">
-							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Card 1</h4>
-								<p>Card</p>
-								<div class="portfolio-links">
-									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
-									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-								</div>
-							</div>
+					<div class="row">
+						<div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+							<ul id="portfolio-flters">
+								<li data-filter="*" class="filter-active">All</li>
+								<li data-filter=".filter-app">Camera</li>
+								<li data-filter=".filter-card">Access Control</li>
+								<li data-filter=".filter-web">Management</li>
+								<li data-filter=".filter-web">Video</li>
+							</ul>
 						</div>
 					</div>
 
-					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-						<div class="portfolio-wrap">
-							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Card 3</h4>
-								<p>Card</p>
-								<div class="portfolio-links">
-									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
-									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
+					<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-						<div class="portfolio-wrap">
-							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Web 3</h4>
-								<p>Web</p>
-								<div class="portfolio-links">
-									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-						<div class="portfolio-wrap">
-							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Card 1</h4>
-								<p>Card</p>
-								<div class="portfolio-links">
-									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
-									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-						<div class="portfolio-wrap">
-							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Card 3</h4>
-								<p>Card</p>
-								<div class="portfolio-links">
-									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
-									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-						<div class="portfolio-wrap">
-							<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Web 3</h4>
-								<p>Web</p>
-								<div class="portfolio-links">
-									<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-									<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-		</section><!-- End Portfolio Section -->
-
-		<!-- ======= Doctors Section ======= -->
-		<section id="teams" class="doctors">
-			<div class="container">
-
-				<div class="section-title">
-					<h2>Teams</h2>
-					<p>Short description of the teams</p>
-				</div>
-
-				<div class="row">
-					<?php foreach ($teams as $tem) { ?>
-						<div class="col-lg-6 mt-4">
-							<div class="member d-flex align-items-start">
-								<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/teams/<?php echo $tem->picture; ?>" class="img-fluid" alt=""></div>
-								<div class="member-info">
-									<h4><?php echo $tem->name; ?></h4>
-									<span><?php echo $tem->position; ?></span>
-									<div class="social">
-										<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->telepone; ?>"><i class="icofont-phone"></i></a>
-										<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->email; ?>"><i class="icofont-ui-email"></i></a>
-										<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->whatsapp; ?>"><i class="icofont-whatsapp"></i></a>
-										<!-- <a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-facebook-fill"></i></a>
-										<a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-instagram-fill"></i></a>
-										<a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-linkedin-box-fill"></i></a>
-										-->
+						<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+							<div class="portfolio-wrap">
+								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+								<div class="portfolio-info">
+									<h4>Card 1</h4>
+									<p>Card</p>
+									<div class="portfolio-links">
+										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
+										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
 									</div>
 								</div>
 							</div>
 						</div>
-					<?php } ?>
-				</div>
-			</div>
-		</section><!-- End Doctors Section -->
 
-		<!-- ======== Client ======== -->
-		<section id="client">
-			<div class="container" data-aos="zoom-in">
-				<div class="section-title">
-					<h2>Clients</h2>
-					<p>Description Our Client</p>
-				</div>
+						<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+							<div class="portfolio-wrap">
+								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+								<div class="portfolio-info">
+									<h4>Card 3</h4>
+									<p>Card</p>
+									<div class="portfolio-links">
+										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
+										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
 
-				<div class="row">
-					<div class="container">
-						<section class="customer-logos slider">
-							<?php foreach ($clients as $cli) { ?>
-								<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/<?php echo $cli->picture; ?>"></div>
-							<?php } ?>
-						</section>
+						<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+							<div class="portfolio-wrap">
+								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+								<div class="portfolio-info">
+									<h4>Web 3</h4>
+									<p>Web</p>
+									<div class="portfolio-links">
+										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+							<div class="portfolio-wrap">
+								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+								<div class="portfolio-info">
+									<h4>Card 1</h4>
+									<p>Card</p>
+									<div class="portfolio-links">
+										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
+										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+							<div class="portfolio-wrap">
+								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+								<div class="portfolio-info">
+									<h4>Card 3</h4>
+									<p>Card</p>
+									<div class="portfolio-links">
+										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
+										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+							<div class="portfolio-wrap">
+								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+								<div class="portfolio-info">
+									<h4>Web 3</h4>
+									<p>Web</p>
+									<div class="portfolio-links">
+										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</section><!-- End Portfolio Section -->
+		<?php
+		}
+		$banyak_teams = $this->db->get('teams')->num_rows();
+		if ($banyak_teams == 0) {
+		} else {
+		?>
+			<!-- ======= Doctors Section ======= -->
+			<section id="teams" class="doctors">
+				<div class="container">
+
+					<div class="section-title">
+						<h2>Teams</h2>
+						<p>Short description of the teams</p>
+					</div>
+
+					<div class="row">
+						<?php foreach ($teams as $tem) { ?>
+							<div class="col-lg-6 mt-4">
+								<div class="member d-flex align-items-start">
+									<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/teams/<?php echo $tem->picture; ?>" class="img-fluid" alt=""></div>
+									<div class="member-info">
+										<h4><?php echo $tem->name; ?></h4>
+										<span><?php echo $tem->position; ?></span>
+										<div class="social">
+											<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->telepone; ?>"><i class="icofont-phone"></i></a>
+											<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->email; ?>"><i class="icofont-ui-email"></i></a>
+											<a data-toggle="popover" data-placement="bottom" data-content="<?php echo $tem->whatsapp; ?>"><i class="icofont-whatsapp"></i></a>
+											<!-- <a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-facebook-fill"></i></a>
+										<a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-instagram-fill"></i></a>
+										<a data-toggle="popover" data-placement="bottom" data-content="<?php  ?>"><i class="ri-linkedin-box-fill"></i></a>
+										-->
+										</div>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section><!-- End Doctors Section -->
+		<?php
+		}
+		$banyak_client =  $this->db->get('client')->num_rows();
+		if ($banyak_client == 0) {
+			# code...
+		} else {
+		?>
+			<!-- ======== Client ======== -->
+			<section id="client">
+				<div class="container" data-aos="zoom-in">
+					<div class="section-title">
+						<h2>Clients</h2>
+						<p>Description Our Client</p>
+					</div>
+
+					<div class="row">
+						<div class="container">
+							<section class="customer-logos slider">
+								<?php foreach ($clients as $cli) { ?>
+									<div class="slide"><img src="<?= base_url('assets/front/'); ?>img/clients/<?php echo $cli->picture; ?>"></div>
+								<?php } ?>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =============== END Client ============= -->
+		<?php
+		}
+		?>
 		<!-- ======= Contact Section ======= -->
 		<section id="contact" class="contact">
 			<div class="container">

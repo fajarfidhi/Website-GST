@@ -692,17 +692,13 @@ section {
   }
 }
 
-/*--------------------------------------------------------------
-# Why Us
---------------------------------------------------------------*/
-.why-us {
-  padding-top:100px;
-}
+/* # Why Us
+
 
 .why-us .content {
   padding: 30px;
   background-image: url(../img/desain/Group\ 1.png);
-  border-radius: 4px;
+  border-radius: 0px;
   color: #fff;
 }
 
@@ -759,10 +755,22 @@ section {
   font-size: 15px;
   color: #848484;
 }
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
+.why-us{
+  padding-top: 100px;
+}
+
+@media (max-width: 992px){
+  .why-us{
+    padding-top: 60px;
+  }
+}
+
 .about .icon-boxes h4 {
   font-size: 18px;
   color: #4b7dab;
@@ -787,7 +795,7 @@ section {
   justify-content: center;
   width: 64px;
   height: 64px;
-  border: 2px solid #f18d8d;
+  border: 2px solid red;
   border-radius: 50px;
   transition: 0.5s;
 }
@@ -799,7 +807,7 @@ section {
 
 .about .icon-box:hover .icon {
   background: rgb(255, 40, 2);
-  border-color: rgb(255, 40, 2);
+  border-color: white;
 }
 
 .about .icon-box:hover .icon i {
@@ -998,6 +1006,10 @@ section {
   margin-top: 30px;
   margin-bottom: 40px;
   transform-style: preserve-3d;
+}
+
+.services .icon-box .icon img {
+  width: 200px;
 }
 
 .services .icon-box .icon::before {
