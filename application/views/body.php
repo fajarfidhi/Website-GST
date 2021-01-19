@@ -105,7 +105,7 @@
 	<main id="main">
 		<!-- ======= Hero Section ======= -->
 		<section id="why-us" class="why-us">
-			<div class="container slideheader">
+			<div class="slideheader">
 				<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
 						<?php
@@ -131,7 +131,7 @@
 														} else {
 															echo "";
 														} ?>">
-								<img class="img-fluid" src="<?= base_url(); ?>/assets/front/img/banner/<?php echo $show->picture; ?>" alt="First slide">
+								<img class="img-fluid" style="width:100%" src="<?= base_url(); ?>/assets/front/img/banner/<?php echo $show->picture; ?>" alt="First slide">
 								<div class="carousel-caption d-none d-md-block">
 									<h3 class="text-white"><?php echo $show->name; ?></h3>
 									<p><?php echo $show->description; ?></p>
@@ -510,7 +510,7 @@
 						</p>
 					</div>
 					<div class="col-lg-4 col-md-6 footer-links">
-						<iframe width="100%" height="200" src="https://maps.google.com/maps?q=apartement%20puncak%20dharmahusada&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"></iframe>
+						<iframe width="100%" height="200" src="https://maps.google.com/maps?q=apartement%20puncak%20dharmahusada&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 					</div>
 
 					<!--
