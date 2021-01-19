@@ -39,9 +39,9 @@
 	<div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
 		<div class="container d-flex">
 			<div class="contact-info mr-auto">
-				<i class="icofont-envelope"></i> <a href="mailto:contact@example.com"><?= $company['email1']; ?></a>
+				<i class="icofont-envelope"></i> <a href="mailto:<?= $company['email1']; ?>"><?= $company['email1']; ?></a>
 				<i class="icofont-phone"></i> <?= $company['telepon1']; ?>
-				<i class="icofont-google-map"></i> <?= $company['address'] ?>, Surabaya
+				<i class="icofont-google-map"></i> <?= $company['address'] ?>, <?= $company['city']; ?>
 			</div>
 			<div class="social-links">
 				<a href="#" id="head_twitter" class="twitter"><i class="icofont-twitter"></i></a>
@@ -342,7 +342,7 @@
 		if ($banyak_teams == 0) {
 		} else {
 		?>
-			<!-- ======= Doctors Section ======= -->
+			<!-- ======= Teams Section ======= -->
 			<section id="teams" class="doctors">
 				<div class="container">
 
@@ -353,7 +353,7 @@
 
 					<div class="row">
 						<?php foreach ($teams as $tem) { ?>
-							<div class="col-lg-6 mt-4">
+							<div class="col-lg-6 col-sm-6 mt-4">
 								<div class="member d-flex align-items-start">
 									<div class="pic"><img src="<?= base_url('assets/front/'); ?>img/teams/<?php echo $tem->picture; ?>" class="img-fluid" alt=""></div>
 									<div class="member-info">
@@ -406,7 +406,7 @@
 		}
 		?>
 		<!-- ======= Contact Section ======= -->
-		<section id="contact" class="contact">
+		<section id="contact" class="contact" style="background-color: whitesmoke">
 			<div class="container">
 
 				<div class="section-title">
@@ -493,8 +493,13 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col-lg-5 col-md-6 footer-contact">
-						<h3><?php echo strtoupper($company['name']); ?></h3>
+					<div class="col-lg-4 col-md-7 footer-contact">
+						<p style="font-size: 25px;
+								margin-bottom: 10px;
+								font-family: Raleway, sans-serif;
+								color: dimgray">
+							<?php echo strtoupper($company['name']); ?>
+						</p>
 						<p>
 							<?php echo $company['district']; ?> <br>
 							<?php echo $company['address']; ?> <br>
@@ -504,9 +509,13 @@
 							<strong>Email:</strong> <?php echo $company['email1']; ?><br>
 						</p>
 					</div>
+					<div class="col-lg-4 col-md-6 footer-links">
+						<iframe width="100%" height="200" src="https://maps.google.com/maps?q=apartement%20puncak%20dharmahusada&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"></iframe>
+					</div>
 
+					<!--
 					<div class="col-lg-3 col-md-6 footer-links">
-						<!--
+						
 						<h4>Useful Links</h4>
 						<ul>
 							<li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -515,8 +524,8 @@
 							<li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
 							<li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
 						</ul>
-						-->
-					</div>
+						
+					</div>-->
 
 					<!--
 					<div class="col-lg-3 col-md-6 footer-links">
@@ -532,8 +541,8 @@
 					-->
 
 					<div class="col-lg-4 col-md-6 footer-newsletter">
-						<h4>Join Our Newsletter</h4>
-						<p>Get updated information about the news that dahua</p>
+						<h5>Join Our Newsletter</h5>
+						<p style="font-size: 14px;">Get updated information about the news that dahua</p>
 						<form action="" method="post">
 							<input class="news" type="email" name="email">
 							<input type="submit" value="Subscribe">
@@ -559,11 +568,11 @@
 				</div>
 			</div>
 			<div class="social-links text-center text-md-right pt-3 pt-md-0">
-				<a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-				<a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-				<a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-				<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-				<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+				<a href="#" id="head_twitter" class="twitter"><i class="bx bxl-twitter"></i></a>
+				<a href="#" id="head_facebook" class="facebook"><i class="bx bxl-facebook"></i></a>
+				<a href="#" id="head_instagram" class="instagram"><i class="bx bxl-instagram"></i></a>
+				<a href="#" id="head_google" class="google-plus"><i class="bx bxl-skype"></i></a>
+				<a href="#" id="head_linkedin" class="linkedin"><i class="bx bxl-linkedin"></i></a>
 			</div>
 		</div>
 	</footer><!-- End Footer -->
@@ -684,6 +693,10 @@
 			$('#head_linkedin').click(function() {
 				window.open('https://linkedin.com/<?= $company['linkedin']; ?>', '_blank');
 			})
+		})
+
+		$(function() {
+			$('#head_google').click(function() {})
 		})
 	</script>
 </body>
