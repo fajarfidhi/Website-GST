@@ -11,8 +11,17 @@ class Model_main extends CI_Model
     {
         $this->db->select('*');
         $this->db->where('status', 1);
+        $this->db->limit(4, 0);
         $query = $this->db->get('products');
         return $query->result();
+    }
+
+    public function read_all_product()
+    {
+        $this->db->select('*');
+        $this->db->where('status', 1);
+        $query = $this->db->get('products');
+        return $query->result_array();
     }
 
     public function readteams()

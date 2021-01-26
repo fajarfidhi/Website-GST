@@ -205,12 +205,12 @@
 							third party partners through a standard SDK</p>
 					</div>
 
-					<div class="row">
+					<div id="show_product" class="row">
 						<?php foreach ($product as $prod) { ?>
-							<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 d-flex align-items-stretch mt-4">
+							<div id="show_product_4" class="col-xl-3 col-lg-4 col-md-4 col-sm-6 d-flex align-items-stretch mt-4">
 								<div class="icon-box">
 									<div class="icon">
-										<img src="<?= base_url('assets/front/'); ?>img/product/<?php echo $prod->picture; ?>" alt="">
+										<img src="<?= base_url('assets/front/'); ?>img/product/<?= $prod->picture; ?>" alt="">
 									</div>
 									<h4><a href=""><?php echo $prod->name; ?></a></h4>
 									<p><?php echo substr($prod->description, 0, 120); ?> ...</p>
@@ -218,6 +218,9 @@
 							</div>
 						<?php } ?>
 					</div>
+				</div>
+				<div class="container" style="margin-top: 30px; margin-bottom:-10px; text-align: center;">
+					<button id="btn_more_products" class="btn btn-danger btn-large">READ MORE +</button>
 				</div>
 			</section><!-- End Services Section -->
 		<?php
@@ -443,13 +446,10 @@
 								<h4>Call:</h4>
 								<p><?php echo $company['telepon1']; ?></p>
 							</div>
-
 						</div>
-
 					</div>
 
 					<div class="col-lg-8 mt-5 mt-lg-0">
-
 						<form action="<?= base_url('assets/front/'); ?>forms/contact.php" method="post" role="form" class="php-email-form">
 							<div class="form-row">
 								<div class="col-md-6 form-group">
@@ -697,6 +697,21 @@
 
 		$(function() {
 			$('#head_google').click(function() {})
+		})
+
+		$(function() {
+			$('#btn_more_products').click(function() {
+				$('#show_product_4').hide();
+				$.ajax({
+					url: "<?php echo base_url('Dasboard/readproductall'); ?>",
+					type: 'GET',
+					dataType: 'json',
+					success: function(data) {
+						$('#show_product').html(data);
+						$('#btn_more_products').hide();
+					}
+				})
+			})
 		})
 	</script>
 </body>
