@@ -10,8 +10,7 @@
 	<meta content="" name="keywords">
 
 	<!-- Favicons -->
-	<link href="<?= base_url('assets/front/'); ?>img/favicon.png" rel="icon">
-	<link href="<?= base_url('assets/front/'); ?>img/apple-touch-icon.png" rel="apple-touch-icon">
+	<link href="<?= base_url('assets/front/'); ?>img/icon.png" rel="icon">
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -31,6 +30,11 @@
 	<link rel="stylesheet" href="<?= base_url('assets/front/'); ?>css/style1.css">
 	<!-- Slick Slide Animation Client-->
 	<link rel="stylesheet" href="<?= base_url('assets/front/'); ?>css/corousel.css">
+	<style>
+		.text-kecil {
+			font-size: 13px;
+		}
+	</style>
 
 </head>
 
@@ -57,9 +61,9 @@
 	<header id="header" class="fixed-top">
 		<div class="container d-flex align-items-center">
 
-			<h1 class="logo mr-auto"><a href=""><?= strtoupper($company['name']); ?></a></h1>
+			<!--<h1 class="logo mr-auto"><a href=""><?= strtoupper($company['name']); ?></a></h1>-->
 			<!-- Uncomment below if you prefer to use an image logo -->
-			<!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+			<a href="index.html" class="logo mr-auto"><img src="<?= base_url('assets/front/img/logo.png') ?>"" alt="" class=" img-fluid"></a>
 
 			<nav class="nav-menu d-none d-lg-block">
 				<ul>
@@ -450,31 +454,28 @@
 					</div>
 
 					<div class="col-lg-8 mt-5 mt-lg-0">
-						<form action="<?= base_url('assets/front/'); ?>forms/contact.php" method="post" role="form" class="php-email-form">
+						<form id="form_message" action="" role="form" class="cmxform php-email-form">
 							<div class="form-row">
+								<label class="control-label" for="txt_name"></label>
 								<div class="col-md-6 form-group">
-									<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-									<div class="validate"></div>
+									<input type="text" name="txt_name" class="form-control" id="txt_name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
 								</div>
 								<div class="col-md-6 form-group">
-									<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-									<div class="validate"></div>
+									<input type="email" class="form-control" name="txt_email" id="txt_email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
 								</div>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-								<div class="validate"></div>
+								<input type="text" class="form-control" name="txt_subject" id="txt_subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
 							</div>
 							<div class="form-group">
-								<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-								<div class="validate"></div>
+								<textarea class="form-control" name="txt_message" id="txt_message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
 							</div>
 							<div class="mb-3">
 								<div class="loading">Loading</div>
 								<div class="error-message"></div>
 								<div class="sent-message">Your message has been sent. Thank you!</div>
 							</div>
-							<div class="text-center"><button class="modif2" type="submit">Send Message</button></div>
+							<div class="text-center"><button id="btn_message" class="modif2" type="submit">Send Message</button></div>
 						</form>
 
 					</div>
@@ -543,9 +544,9 @@
 					<div class="col-lg-4 col-md-6 footer-newsletter">
 						<h5>Join Our Newsletter</h5>
 						<p style="font-size: 14px;">Get updated information about the news that dahua</p>
-						<form action="" method="post">
-							<input class="news" type="email" name="email">
-							<input type="submit" value="Subscribe">
+						<form id="newslater" action="" method="post">
+							<input class="news" type="email" name="txtemail" id="txtemail">
+							<input id="btn_newsleter" type="submit" value="Subscribe">
 						</form>
 					</div>
 
@@ -616,7 +617,7 @@
 	<script src="<?= base_url('assets/front/'); ?>vendor/jquery/jquery.min.js"></script>
 	<script src="<?= base_url('assets/front/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="<?= base_url('assets/front/'); ?>vendor/jquery.easing/jquery.easing.min.js"></script>
-	<script src="<?= base_url('assets/front/'); ?>vendor/php-email-form/validate.js"></script>
+	<!-- <script src="<?= base_url('assets/front/'); ?>vendor/php-email-form/validate.js"></script>-->
 	<script src="<?= base_url('assets/front/'); ?>vendor/venobox/venobox.min.js"></script>
 	<script src="<?= base_url('assets/front/'); ?>vendor/waypoints/jquery.waypoints.min.js"></script>
 	<script src="<?= base_url('assets/front/'); ?>vendor/counterup/counterup.min.js"></script>
@@ -632,6 +633,11 @@
 
 	<!--Animate Menu-->
 	<script src="<?= base_url('assets/front/'); ?>js/main-menu.js" type="text/javascrip"></script>
+
+	<!-- Form Validation-->
+	<script src="<?= base_url('assets/front/'); ?>vendor/jquery-validation/lib/jquery.mockjax.js"></script>
+	<script src="<?= base_url('assets/front/'); ?>vendor/jquery-validation/lib/jquery.form.js"></script>
+	<script src="<?= base_url('assets/front/'); ?>vendor/jquery-validation/dist/jquery.validate.js"></script>
 	<script>
 		$(document).ready(function() {
 			$('#myModal').modal('hide');
@@ -712,6 +718,66 @@
 					}
 				})
 			})
+		})
+
+		$().ready(function() {
+			$('#form_message').validate({
+				rules: {
+					txt_name: "required",
+					txt_email: {
+						required: true,
+						email: true
+					},
+					txt_subject: "required",
+					txt_message: "required"
+				},
+				messages: {
+					txt_name: "Please enter yourname",
+					txt_email: {
+						required: "Please enter your email",
+						email: "Please enter a valid email address"
+					},
+					txt_subject: "Please enter your subject",
+					txt_message: "Please enter your message"
+				},
+				errorElement: "em",
+				errorPlacement: function(error, element) {
+					// Add the `help-block` class to the error element
+					error.addClass("help-block text-danger text-kecil");
+
+					if (element.prop("type") === "checkbox") {
+						error.insertAfter(element.parent("label"));
+					} else {
+						error.insertAfter(element);
+					}
+				},
+				highlight: function(element, errorClass, validClass) {
+					$(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+				},
+				unhighlight: function(element, errorClass, validClass) {
+					$(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
+				},
+				submitHandler: function(form) {
+					$.ajax({
+						url: "<?= base_url('Dasboard/sendmesaagescontact'); ?>",
+						type: "POST",
+						dataType: 'json',
+						data: $('#form_message').serialize(),
+						success: function(data) {
+							if (data.message == true) {
+								alert('Sukses');
+							} else {
+								alert('gagal');
+							}
+						}
+					})
+				}
+			});
+		})
+
+		S(function() {
+			var txtmail = $('#txtmail');
+
 		})
 	</script>
 </body>

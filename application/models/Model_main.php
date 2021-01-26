@@ -68,4 +68,10 @@ class Model_main extends CI_Model
         $query = $this->db->get('about');
         return $query->result();
     }
+
+
+    public function savemessage($data)
+    {
+        $this->db->insert('message', $data);
+    }
 }
