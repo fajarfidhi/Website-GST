@@ -63,7 +63,7 @@
 
 			<!--<h1 class="logo mr-auto"><a href=""><?= strtoupper($company['name']); ?></a></h1>-->
 			<!-- Uncomment below if you prefer to use an image logo -->
-			<a href="index.html" class="logo mr-auto"><img src="<?= base_url('assets/front/img/logo.png') ?>"" alt="" class=" img-fluid"></a>
+			<a href="index.html" class="logo mr-auto"><img src="<?= base_url('assets/front/img/logo.png') ?>" alt="" class=" img-fluid"></a>
 
 			<nav class="nav-menu d-none d-lg-block">
 				<ul>
@@ -217,7 +217,7 @@
 										<img src="<?= base_url('assets/front/'); ?>img/product/<?= $prod->picture; ?>" alt="">
 									</div>
 									<h4><a href=""><?php echo $prod->name; ?></a></h4>
-									<p><?php echo substr($prod->description, 0, 120); ?> ...</p>
+									<p><?php echo substr($prod->description, 0, 120); ?>...</p>
 								</div>
 							</div>
 						<?php } ?>
@@ -456,7 +456,6 @@
 					<div class="col-lg-8 mt-5 mt-lg-0">
 						<form id="form_message" action="" role="form" class="cmxform php-email-form">
 							<div class="form-row">
-								<label class="control-label" for="txt_name"></label>
 								<div class="col-md-6 form-group">
 									<input type="text" name="txt_name" class="form-control" id="txt_name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
 								</div>
@@ -610,6 +609,12 @@
 	</div>
 	<!-- /.modal -->
 
+	<div id="spinner-message" class="modal">
+		<div class="spinner-border" style="width: 6rem; height: 6rem; margin-top:100px; color:red" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+
 	<div id="preloader"></div>
 	<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
@@ -761,14 +766,20 @@
 					$.ajax({
 						url: "<?= base_url('Dasboard/sendmesaagescontact'); ?>",
 						type: "POST",
-						dataType: 'json',
 						data: $('#form_message').serialize(),
+						beforeSend: function() {
+							$('#spinner-message').modal('show').addClass('text-center');
+						},
 						success: function(data) {
-							if (data.message == true) {
-								alert('Sukses');
+							if (data.success != true) {
+								$('#spinner-message').modal('hide');
+								$('#form_message')[0].reset();
 							} else {
 								alert('gagal');
 							}
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							alert('Processing Failed')
 						}
 					})
 				}

@@ -21,6 +21,7 @@ class Dasboard extends CI_Controller
 		$this->load->view('body', $data);
 	}
 
+	// Menampilkan data jquery readmore product
 	public function readproductall()
 	{
 		$takedataproductall = $this->Model_main->read_all_product();
@@ -43,38 +44,53 @@ class Dasboard extends CI_Controller
 
 	public function sendmesaagescontact()
 	{
-		$message = array();
+		$return = array();
 
+		$email = $this->input->post('txt_email');
+		$name = $this->input->post('txt_name');
+		$subject = $this->input->post('txt_subject');
+		$message = $this->input->post('txt_message');
+		$address_send = "fajar@bahterasolution.id";
+
+		// Kirim data ke database
+		$data = array(
+			'idmessage' => NULL,
+			'name' => $name,
+			'subject' => $subject,
+			'email' => $email,
+			'message' => $message,
+			'datesend' => date('Y-m-d H:i:s')
+		);
+		$this->Model_main->savemessage($data);
+
+		// kririm data ke email
 		$config['mailtype'] = 'html';
 		$config['protocol'] = 'smtp';
-		$config['smtp_host'] = 'smtp.gmail.com';
-		$config['smtp_user'] = 'fajar@bahterasolution.id';
-		$config['smtp_pass'] = 'solution2017';
+		$config['mailpath'] = '/usr/sbin/sendmail';
+		$config['smtp_host'] = 'smtp.office365.com';
+		$config['smtp_user'] = 'technical@bahterasolution.co.id';
+		$config['smtp_pass'] = 'Solution.2020';
 		$config['smtp_port'] = 587;
 		$config['newline'] = "\r\n";
+		$config['wordwrap'] = TRUE;
+		$config['charset'] = 'iso-8859-1';
 
-		$this->load->library('email', $config);
+		$this->load->library('email');
+		$this->email->initialize($config);
 
-		$this->email->from('fidhifajar@gmail.com', 'Messages From Website');
-		$this->email->to($this->input->post('txt_mail'));
-		$this->email->subject($this->input->post('txt_subject'));
-		$this->email->message($this->input->post('txt_message'));
+		$this->email->from($email, $name);
+		$this->email->to($address_send);
+		$this->email->subject($subject);
+		$this->email->message($message);
+		$this->email->send();
+
+		// jika gagal atau sukses
 		if ($this->email->send()) {
-			$data = array(
-				'idmessage' => NULL,
-				'name' => $this->input->post('txt_name'),
-				'subject' => $this->input->post('txt_subject'),
-				'email' => $this->input->post('txt_email'),
-				'message' => $this->input->post('txt_message'),
-				'datesend' => date('Y-m-d H:i:s')
-			);
-
-			$this->Model_main->savemessage($data);
-			$message['success'] = true;
+			$return['success'] = true;
 		} else {
-			$message['success'] = false;
+			$return['success'] = false;
 		}
-		echo json_encode($message);
+		echo json_encode($return);
 	}
 
 	public function newslater()
