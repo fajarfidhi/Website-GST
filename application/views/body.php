@@ -595,7 +595,7 @@
 							<input type="text" class="form-control form-login " id="txt_name" name="txt_name" placeholder="Password...">
 						</div>
 						<div class="form-group">
-							<a href="admin/index.html" class="btn btn-info btn-lg btn-block btn-login">Login</a>
+							<button type="submit" class="btn btn-info btn-lg btn-block btn-login">Login</button>
 						</div>
 						<hr>
 						<h6 class="forgot"><a href="#">Forgot Password?</a></h6>
