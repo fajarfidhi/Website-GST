@@ -11,7 +11,8 @@ class Model_main extends CI_Model
     {
         $this->db->select('*');
         $this->db->where('status', 1);
-        $this->db->limit(4, 0);
+        $this->db->limit(6, 0);
+        $this->db->order_by('list', 'ASC');
         $query = $this->db->get('products');
         return $query->result();
     }
@@ -20,6 +21,7 @@ class Model_main extends CI_Model
     {
         $this->db->select('*');
         $this->db->where('status', 1);
+        $this->db->order_by('list', 'ASC');
         $query = $this->db->get('products');
         return $query->result_array();
     }

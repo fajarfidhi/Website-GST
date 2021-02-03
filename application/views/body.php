@@ -34,6 +34,45 @@
 		.text-kecil {
 			font-size: 13px;
 		}
+
+		.txt_news {
+			width: 100%;
+			height: 40px;
+			border: none;
+			outline: none;
+			background: #ededed;
+			padding-left: 1rem;
+			border-radius: 2px;
+		}
+
+		.btn_news {
+			display: block;
+			width: 100%;
+			height: 40px;
+			outline: none;
+			border: none;
+			font-size: 0, 5rem;
+			color: #fff;
+			background: #ff5a30;
+			border-radius: 3px;
+			margin-top: 10px;
+		}
+
+		.btn_news:hover {
+			background: red;
+		}
+
+		.btn_read_more_product {
+			border-radius: 4px;
+			border: none;
+			background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+			background-size: 600%;
+			animation: 16s linear infinite;
+			height: auto;
+			padding: 5px;
+			color: white;
+			outline: none;
+		}
 	</style>
 
 </head>
@@ -69,11 +108,11 @@
 				<ul>
 					<li class="active"><a href="#header">Home</a></li>
 					<?php
-					$menu_about = $this->db->get('about')->num_rows();
-					$menu_product = $this->db->get('products')->num_rows();
-					$menu_portfolio = $this->db->get('portfolio')->num_rows();
-					$menu_teams = $this->db->get('teams')->num_rows();
-					$menu_client = $this->db->get('client')->num_rows();
+					$menu_about = $this->db->select('*')->where('status', 1)->get('about')->num_rows();
+					$menu_product = $this->db->select('*')->where('status', 1)->get('products')->num_rows();
+					$menu_portfolio = $this->db->select('*')->where('status', 1)->get('portfolio')->num_rows();
+					$menu_teams = $this->db->select('*')->where('status', 1)->get('teams')->num_rows();
+					$menu_client = $this->db->select('*')->where('status', 1)->get('client')->num_rows();
 					if ($menu_about == 0) {
 					} else {
 						echo '<li><a href="#about">About</a></li>';
@@ -100,6 +139,7 @@
 
 				</ul>
 			</nav><!-- .nav-menu -->
+			<button id="btn_search" style="background: transparent; border: none;outline: none;"> <span style="margin-left: 20px; margin-right: 20px;font-size: 20px;" class="icofont icofont-ui-search"></span></button>
 
 			<a href="#" onclick="login()" class="appointment-btn scrollto modif1">Login Member</a>
 
@@ -109,11 +149,11 @@
 	<main id="main">
 		<!-- ======= Hero Section ======= -->
 		<section id="why-us" class="why-us">
-			<div class="slideheader">
+			<div class="slideheader" style="margin-top:10px">
 				<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
 						<?php
-						$banyak = $this->db->get('banner')->num_rows();
+						$banyak = $this->db->select('*')->where('status', 1)->get('banner')->num_rows();
 						for ($i = 0; $i < $banyak; $i++) {
 						?>
 							<li data-target="#carouselExampleIndicators2" data-slide-to="<?php $i; ?>" class="
@@ -192,7 +232,7 @@
 			</div>
 		</section><!-- End About Section -->
 		<?php
-		$jumlah_products = $this->db->get('products')->num_rows();
+		$jumlah_products = $this->db->select('*')->where('status', 1)->get('products')->num_rows();
 		if ($jumlah_products == 0) {
 		} else {
 		?>
@@ -211,25 +251,25 @@
 
 					<div id="show_product" class="row">
 						<?php foreach ($product as $prod) { ?>
-							<div id="show_product_4" class="col-xl-3 col-lg-4 col-md-4 col-sm-6 d-flex align-items-stretch mt-4">
-								<div class="icon-box">
+							<div id="show_product_4" class="col-xl-2 col-lg-3 col-md-3 col-sm-4 d-flex align-items-stretch mt-4">
+								<div style="width: 100%;" class="icon-box">
 									<div class="icon">
-										<img src="<?= base_url('assets/front/'); ?>img/product/<?= $prod->picture; ?>" alt="">
+										<img style="height: 100%;" src="<?= base_url('assets/front/'); ?>img/product/<?= $prod->picture; ?>" alt="">
 									</div>
-									<h4><a href=""><?php echo $prod->name; ?></a></h4>
-									<p><?php echo substr($prod->description, 0, 120); ?>...</p>
+									<h5><a href=""><?php echo $prod->name; ?></a></h5>
+									<!--<p><?php echo substr($prod->description, 0, 120); ?>...</p>-->
 								</div>
 							</div>
 						<?php } ?>
 					</div>
 				</div>
 				<div class="container" style="margin-top: 30px; margin-bottom:-10px; text-align: center;">
-					<button id="btn_more_products" class="btn btn-danger btn-large">READ MORE +</button>
+					<button id="btn_more_products" class="btn btn-danger btn-sm">READ MORE +</button>
 				</div>
 			</section><!-- End Services Section -->
 		<?php
 		}
-		$jumlah_portfolio =  $this->db->get('portfolio')->num_rows();
+		$jumlah_portfolio =  $this->db->select('*')->where('status', 1)->get('portfolio')->num_rows();
 		if ($jumlah_portfolio == 0) {
 		} else {
 		?>
@@ -268,84 +308,13 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-							<div class="portfolio-wrap">
-								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-								<div class="portfolio-info">
-									<h4>Card 3</h4>
-									<p>Card</p>
-									<div class="portfolio-links">
-										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
-										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-							<div class="portfolio-wrap">
-								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-								<div class="portfolio-info">
-									<h4>Web 3</h4>
-									<p>Web</p>
-									<div class="portfolio-links">
-										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-							<div class="portfolio-wrap">
-								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-								<div class="portfolio-info">
-									<h4>Card 1</h4>
-									<p>Card</p>
-									<div class="portfolio-links">
-										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
-										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6 portfolio-item filter-card">
-							<div class="portfolio-wrap">
-								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-								<div class="portfolio-info">
-									<h4>Card 3</h4>
-									<p>Card</p>
-									<div class="portfolio-links">
-										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
-										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6 portfolio-item filter-web">
-							<div class="portfolio-wrap">
-								<img src="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-								<div class="portfolio-info">
-									<h4>Web 3</h4>
-									<p>Web</p>
-									<div class="portfolio-links">
-										<a href="<?= base_url('assets/front/'); ?>img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-										<a href="portfolio-details.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
 					</div>
 
 				</div>
 			</section><!-- End Portfolio Section -->
 		<?php
 		}
-		$banyak_teams = $this->db->get('teams')->num_rows();
+		$banyak_teams = $this->db->select('*')->where('status', 1)->get('teams')->num_rows();
 		if ($banyak_teams == 0) {
 		} else {
 		?>
@@ -384,7 +353,7 @@
 			</section><!-- End Doctors Section -->
 		<?php
 		}
-		$banyak_client =  $this->db->get('client')->num_rows();
+		$banyak_client =  $this->db->select('*')->where('status', 1)->get('client')->num_rows();
 		if ($banyak_client == 0) {
 			# code...
 		} else {
@@ -413,7 +382,7 @@
 		}
 		?>
 		<!-- ======= Contact Section ======= -->
-		<section id="contact" class="contact" style="background-color: whitesmoke">
+		<section id="contact" class="contact">
 			<div class="container">
 
 				<div class="section-title">
@@ -430,9 +399,8 @@
 
 			<div class="container">
 				<div class="row mt-5">
-
 					<div class="col-lg-4">
-						<div class="info">
+						<div class="info" style="background: transparent;">
 							<div class="address">
 								<i class="icofont-google-map"></i>
 								<h4>Location:</h4>
@@ -454,7 +422,7 @@
 					</div>
 
 					<div class="col-lg-8 mt-5 mt-lg-0">
-						<form id="form_message" action="" role="form" class="cmxform php-email-form">
+						<form id="form_message" action="" role="form" class="cmxform php-email-form" style="background: transparent;">
 							<div class="form-row">
 								<div class="col-md-6 form-group">
 									<input type="text" name="txt_name" class="form-control" id="txt_name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -468,11 +436,6 @@
 							</div>
 							<div class="form-group">
 								<textarea class="form-control" name="txt_message" id="txt_message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-							</div>
-							<div class="mb-3">
-								<div class="loading">Loading</div>
-								<div class="error-message"></div>
-								<div class="sent-message">Your message has been sent. Thank you!</div>
 							</div>
 							<div class="text-center"><button id="btn_message" class="modif2" type="submit">Send Message</button></div>
 						</form>
@@ -540,12 +503,12 @@
 					</div>
 					-->
 
-					<div class="col-lg-4 col-md-6 footer-newsletter">
+					<div class="col-lg-4 col-md-6">
 						<h5>Join Our Newsletter</h5>
 						<p style="font-size: 14px;">Get updated information about the news that dahua</p>
-						<form id="newslater" action="" method="post">
-							<input class="news" type="email" name="txtemail" id="txtemail">
-							<input id="btn_newsleter" type="submit" value="Subscribe">
+						<form id="newslatter" action="" method="post">
+							<input class="txt_news" type="email" name="txtemail" id="txtemail" placeholder="Email address">
+							<button class="btn_news" id="btn_newsletter" value="Subscribe">Subscribe</button>
 						</form>
 					</div>
 
@@ -747,7 +710,6 @@
 				},
 				errorElement: "em",
 				errorPlacement: function(error, element) {
-					// Add the `help-block` class to the error element
 					error.addClass("help-block text-danger text-kecil");
 
 					if (element.prop("type") === "checkbox") {
@@ -775,7 +737,7 @@
 								$('#spinner-message').modal('hide');
 								$('#form_message')[0].reset();
 							} else {
-								alert('gagal');
+								alert('Failed');
 							}
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
@@ -789,6 +751,12 @@
 		S(function() {
 			var txtmail = $('#txtmail');
 
+		})
+
+		$(function() {
+			$('#btn_newsletter').submit(function() {
+				alert('success');
+			})
 		})
 	</script>
 </body>

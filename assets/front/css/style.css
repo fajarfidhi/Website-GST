@@ -1055,7 +1055,16 @@ section {
 	font-size: 22px;
 }
 
+.services .icon-box h5{
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
 .services .icon-box h4 a {
+	color: #eb0404;
+}
+
+.services .icon-box h5 a {
 	color: #eb0404;
 }
 
@@ -1753,9 +1762,14 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact{
+	background-image: url(../img/about-bg.png);
+	height: 70%;
+	width: 100%;
+}
 .contact .info {
 	width: 100%;
-	background: whitesmoke;
+	
 }
 
 .contact .info i {

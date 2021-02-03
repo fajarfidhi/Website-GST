@@ -28,13 +28,13 @@ class Dasboard extends CI_Controller
 		$data = array();
 		foreach ($takedataproductall as $showkan) {
 			$list = array();
-			$list[]  = '<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 d-flex align-items-stretch mt-4">
-			<div class="icon-box">
+			$list[]  = '<div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 d-flex align-items-stretch mt-4">
+			<div style="width: 110%;" class="icon-box">
 				<div class="icon">
-					<img src="' . base_url() . 'assets/front/img/product/' . $showkan['picture'] . '">
+					<img style="height: 100%;" src="' . base_url() . 'assets/front/img/product/' . $showkan['picture'] . '">
 				</div>
-				<h4><a href="">' . $showkan['name'] . '</a></h4>
-				<p>' . substr($showkan['description'], 0, 120) . '...</p>
+				<h5><a href="">' . $showkan['name'] . '</a></h5>
+				
 			</div>
 		</div>';
 			$data[] = $list;
