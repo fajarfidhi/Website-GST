@@ -1763,8 +1763,8 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact{
-	background-image: url(../img/about-bg.png);
-	height: 70%;
+
+	height: 80%;
 	width: 100%;
 }
 .contact .info {

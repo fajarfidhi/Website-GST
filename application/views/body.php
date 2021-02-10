@@ -198,15 +198,10 @@
 		</section>
 
 		<!-- ======= About Section ======= -->
-		<section id="about" class="about" style="margin-top:-10px; margin-bottom:-60px; padding-top:0px; background-color:whitesmoke ">
+		<section id="about" class="about" style=" margin-bottom:-60px; padding-top:0px; background-color:whitesmoke ">
 			<div class="container">
-
 				<div class="row">
-					<div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" style="margin-left: 15px; width: 94%;margin-right: -15px">
-						<a href="https://www.youtube.com/watch?v=Y-K3Kqf6GjA" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-					</div>
-
-					<div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+					<div class="col-sm-12 text-justify">
 						<?php
 						$take_about_header = $this->db->select('*')->limit(1)->where('status', 1)->get('about');
 						foreach ($take_about_header->result() as $about_header) {
@@ -215,20 +210,30 @@
 							<p><?php echo $about_header->description; ?></p>
 						<?php
 						}
-						$take_about_body = $this->db->select('*')->limit(10, 1)->where('status', 1)->get('about');
-						foreach ($take_about_body->result() as $show_about) {
-						?>
-							<div class="icon-box">
-								<div class="icon"><i class="bx <?php echo $show_about->icon; ?>"></i></div>
-								<h4 class="title"><a href=""><?php echo $show_about->name; ?></a></h4>
-								<p class="description"><?php echo $show_about->description; ?></p>
-							</div>
-						<?php
-						}
 						?>
 					</div>
-				</div>
+					<!--
+					<div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" style="margin-left: 15px; width: 94%;margin-right: -15px">
+						<a href="https://www.youtube.com/watch?v=Y-K3Kqf6GjA" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+					</div>
+					-->
+					<div class="container">
+						<div class="col-sm-6">
+							<?php
+							$take_about_body = $this->db->select('*')->limit(10, 1)->where('status', 1)->get('about');
+							foreach ($take_about_body->result() as $show_about) {
+							?>
+								<div class="icon-box card" style="padding:10px">
+									<h4 class="title"><a href=""><?php echo $show_about->name; ?></a></h4>
+									<p class="description"><?php echo $show_about->description; ?></p>
+								</div>
+							<?php
+							}
+							?>
+						</div>
+					</div>
 
+				</div>
 			</div>
 		</section><!-- End About Section -->
 		<?php
@@ -242,11 +247,13 @@
 
 					<div class="section-title">
 						<h2>Products</h2>
+						<!--
 						<p>Abiding by the philosophy of "Innovation for All", Dahua offers a wide portfolio of
 							security-related products, ranging from IPC, NVR, HDCVI cameras, HCVR, PTZ cameras, thermal
 							cameras, Access Control, Video Intercom, Alarms, Mobile & Traffic products, display & control,
 							VMS and so on. Dahua products are based on an open platform that features easy integration with
 							third party partners through a standard SDK</p>
+							-->
 					</div>
 
 					<div id="show_product" class="row">
@@ -382,12 +389,11 @@
 		}
 		?>
 		<!-- ======= Contact Section ======= -->
-		<section id="contact" class="contact">
+		<section id="contact" class="contact" style="margin-top:-10px; margin-bottom:-40px; padding-top:0px; background-color:whitesmoke ">
 			<div class="container">
 
 				<div class="section-title">
 					<h2>Contact</h2>
-					<p>Short description of the contacts</p>
 				</div>
 			</div>
 
@@ -400,7 +406,7 @@
 			<div class="container">
 				<div class="row mt-5">
 					<div class="col-lg-4">
-						<div class="info" style="background: transparent;">
+						<div class="info">
 							<div class="address">
 								<i class="icofont-google-map"></i>
 								<h4>Location:</h4>
